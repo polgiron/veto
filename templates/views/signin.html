@@ -1,0 +1,18 @@
+{% extends "layouts/base.html" %}
+
+{% block pagetitle %}Sign in{% endblock %}
+
+{% block content %}
+  <form method="post" action="/signin" role="signin" novalidate="novalidate">
+    <input type="hidden" name="action" value="signin">
+    <div class="input-single">
+      <label for="signin-email">Email</label>
+      <input type="email" name="email" placeholder="Email" id="signin-email" autocomplete="off">
+    </div>
+    <div class="input-single">
+      <label for="signin-password">Password</label>
+      <input type="password" name="password" placeholder="Password" id="signin-password" autocomplete="off">
+    </div>
+    <button type="submit">Sign in</button>
+  </form>
+{% endblock %}

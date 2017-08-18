@@ -1,0 +1,54 @@
+{% extends "layouts/base.html" %}
+
+{% block pagetitle %}Contact me{% endblock %}
+
+{% block content %}
+  {% if enquirySubmitted %}
+    <h2>Thanks for getting in touch.</h2>
+  {% else %}
+    <form method="post">
+      <input type="hidden" name="action" value="contact">
+
+      {% set class = ( "has-error" if validationErrors.name else "" ) %}
+      <div class="input-single {{ class }}">
+        <label>
+          <span>Name</span>
+          <input type="text" name="name.full" value="{{ formData["name.full"] }}" class="form-control">
+        </label>
+      </div>
+      {% set class = ( "has-error" if validationErrors.email else "" ) %}
+      <div class="input-single {{ class }}">
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" value="{{ formData.email }}" class="form-control">
+        </label>
+      </div>
+      <div class="input-single">
+        <label>
+          <span>Phone</span>
+          <input type="text" name="phone" value="{{ formData.phone }}" placeholder="(optional)" class="form-control">
+        </label>
+      </div>
+      {% set class = ( "has-error" if validationErrors.enquiryType else "" ) %}
+      <div class="input-single {{ class }}">
+        <label>
+          <span>What are you contacting us about?</span>
+          <select name="enquiryType" class="form-control">
+            <option value="">(select one)</option>
+            {% for type in enquiryTypes %}
+              {% set selected = ( 'selected="selected"' if formData.enquiryType == type.value else "" ) %}
+              <option value="{{type.value}}" {{ selected }}>{{ type.label }}</option>
+            {% endfor %}
+          </select>
+      </div>
+      {% set class = ( "has-error" if validationErrors.message else "" ) %}
+      <div class="input-single {{ class }}">
+        <label>
+          <span>Message</span>
+          <textarea name="message" placeholder="Leave us a message..." rows="4" class="form-control">{{ formData.message }}</textarea>
+        </label>
+      </div>
+      <button type="submit">Send</button>
+    </form>
+  {% endif %}
+{% endblock %}

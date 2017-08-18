@@ -1,0 +1,11 @@
+{% extends "layouts/base.html" %}
+
+{% block pagetitle %}Page title{% endblock %}
+
+{% block content %}
+  {% if user %}
+    <h3>Welcome {{user.name.first}}</h3>
+  {% else %}
+    <h3>Please <a href="/signin">sign in</a></h3>
+  {% endif %}
+{% endblock %}
