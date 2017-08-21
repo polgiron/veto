@@ -1,0 +1,22 @@
+{% macro fiche() %}
+  <li class="fiche">
+    <div class="top">
+      <h4 class="heading-4">Rupture du ligament croisé</h4>
+    </div>
+    <div class="bottom">
+      <p class="date">Dimanche 11 aout 2017</p>
+      <ul class="tag-list">
+        <li class="tag-list__entry">sante</li>
+        <li class="tag-list__entry">blabla</li>
+        <li class="tag-list__entry">blablabla</li>
+      </ul>
+      <hr>
+      <p class="description">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro vero et ab repellendus voluptatum facere voluptate architecto minus ut suscipit? Repellat veritatis ullam iure quod minus inventore, omnis fuga est!
+      </p>
+      <div class="arrow">
+        {% include "svg/icon-arrow-circle.svg" %}
+      </div>
+    </div>
+  </li>
+{% endmacro %}

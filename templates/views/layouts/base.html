@@ -10,6 +10,7 @@
     <title>{{ title|default("veto") }}</title>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shoelace-css/1.0.0-beta10/shoelace.css">
     <link href="/css/site.css" rel="stylesheet">
 
@@ -17,72 +18,35 @@
     {% block head %}{% endblock %}
   </head>
   <body>
-
     <div class="main-wrapper">
       <header class="header">
-        <div class="left">
-          <a class="title" href="/"><h1>Paul Vincent</h1></a>
-        </div>
-        <div class="right">
-          <h2 class="page-title">{% block pagetitle %}{% endblock %}</h2>
+        <div class="content-wrapper">
+          <a class="main-logo" href="/">LOGO</a>
+          <nav class="main-nav">
+            <ul class="main-nav__list">
+              <li class="main-nav__entry"><a href="#">Accueil</a></li>
+              <li class="main-nav__entry"><a href="#">La clinique</a></li>
+              <li class="main-nav__entry"><a href="#">L'équipe</a></li>
+              <li class="main-nav__entry"><a href="#">Fiche pratiques</a></li>
+              <li class="main-nav__entry"><a href="#">Contact</a></li>
+            </ul>
+          </nav>
         </div>
       </header>
-      <main class="content-wrapper">
-        <div class="sidebar">
-          <nav class="public-gallery-nav">
-            <h3>Public galleries</h3>
-            <ul class="public-gallery-list">
-              {% for gallery in galleryNavPublic %}
-                <li class="{{ 'is-active' if gallery.slug == section else '' }}">
-                  <a href="/gallery/{{gallery.slug}}">{{gallery.name}}</a>
-                </li>
-              {% endfor %}
-            </ul>
-          </nav>
-          {% if user %}
-            <nav class="private-gallery-nav">
-              <h3>Private galleries</h3>
-              <ul class="private-gallery-list">
-                {% for gallery in galleryNavPrivate %}
-                  <li class="{{ 'is-active' if gallery.slug == section else '' }}">
-                    <a href="/gallery/{{gallery.slug}}">{{gallery.name}}</a>
-                  </li>
-                {% endfor %}
-              </ul>
-            </nav>
-          {% endif %}
-          <nav class="bottom-nav">
-            <ul class="bottom-list">
-              {% for link in navLinks %}
-                <li class="{{ 'is-active' if link.key == section else '' }}">
-                  <a href="{{ link.href }}">{{ link.label }}</a>
-                </li>
-              {% endfor %}
-              {% if user %}
-                {% if user.canAccessKeystone %}
-                <li><a href="/keystone">Open admin</a></li>
-                {% endif %}
-                <li><a href="/signout">Sign Out</a></li>
-              {% else %}
-                <li class="{{ 'is-active' if 'signin' == section else '' }}">
-                  <a class="" href="/signin">Sign In</a>
-                </li>
-              {% endif %}
-            </ul>
-          </nav>
-        </div>
-        <div class="content">
-          {{ FM.flashMessages(messages) }}
-          {% block content %}{% endblock %}
-        </div>
+      <main class="main">
+        {% block content %}{% endblock %}
       </main>
+      <footer class="footer">
+        <div class="content-wrapper">
+          Copyright blabla
+        </div>
+      </footer>
     </div>
 
-    <script src="/js/lib/jquery-2.1.4.min.js"></script>
-    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <!-- <script src="/js/lib/jquery-2.1.4.min.js"></script>
     <script src="/js/base.js"></script>
     <script src="/js/main.js"></script>
-    <script src="/js/app.js"></script>
+    <script src="/js/app.js"></script> -->
     {% block js %}{% endblock %}
   </body>
 </html>

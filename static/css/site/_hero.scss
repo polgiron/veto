@@ -1,0 +1,44 @@
+.hero {
+  height: calc(100vh - 56px);
+  background: url('/images/dog-2.jpg');
+  background-size: cover;
+  background-position: center;
+  margin-top: $header-height;
+  position: relative;
+}
+
+.hero__content {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  width: 45%;
+
+  > div {
+    padding: 2rem;
+  }
+
+  .top {
+    background: $color-white;
+  }
+
+  .bottom {
+    background: rgba($color-white, .7);
+  }
+
+  .small-list__entry {
+    font-size: 1.2rem;
+  }
+
+  .heading-1 {
+    text-transform: uppercase;
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+
+  .rdv-wrapper {
+    border-left: 1px solid $color-main;
+    padding-left: 1rem;
+    opacity: .7;
+  }
+}

@@ -1,2 +1,16 @@
-$color-main: #C0392B;
+// $color-main: #e74c3c;
+// $color-main-lighter: #ec7063;
+$color-main: #ec7063;
+// $color-main-lighter: #f9d4d1;
+$color-main-lighter: rgba($color-main, .25);
 $color-white: #fff;
+// $color-white-2: #fbfbfb;
+$color-white-2: #faf6f3;
+$color-black: #000;
+$color-gray: #353631;
+$color-gray-2: #6f6c69;
+$color-gray-3: #f1f1f1;
+
+$content-max-width: 1200px;
+$header-height: 56px;
+$padding-section: 4rem;

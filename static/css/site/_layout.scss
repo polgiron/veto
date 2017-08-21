@@ -1,0 +1,353 @@
+.main-wrapper,
+.content-wrapper {
+  max-width: $content-max-width;
+  margin: auto;
+}
+
+.main-wrapper {
+  background: $color-white;
+}
+
+.content-wrapper {
+  padding: 0 2rem;
+}
+
+.small-list__entry {
+  display: flex;
+  align-items: center;
+
+  &:not(:last-child) {
+    margin-bottom: .5rem;
+  }
+
+  i {
+    margin-right: .3em;
+    font-size: 1em;
+  }
+
+  img {
+    height: 22px;
+  }
+}
+
+.section-title {
+  padding: $padding-section;
+  position: relative;
+  overflow: hidden;
+  // background: $color-white-2;
+  text-align: center;
+
+  .title {
+    font-size: 4rem;
+
+    span {
+      color: $color-main;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.bg-image {
+  height: 400px;
+  width: 400px;
+  position: absolute;
+  bottom: -120px;
+  left: -50px;
+  opacity: .05;
+  transform: rotate(-20deg);
+
+  svg {
+    height: 100%;
+    width: 100%;
+
+    path {
+      fill: $color-main !important;
+    }
+  }
+}
+
+.section-half {
+  display: flex;
+
+  &:nth-child(2n) {
+    background: $color-white;
+
+    .section-half__text {
+      width: 55%;
+      order: 1;
+    }
+
+    .section-half__image {
+      width: 45%;
+    }
+  }
+
+  > div {
+    min-height: 400px;
+  }
+}
+
+.section-half__text {
+  width: 45%;
+  padding: $padding-section;
+}
+
+.section-half__image {
+  width: 55%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.section {
+  padding: $padding-section;
+
+  .section__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+
+    .icon {
+      height: 42px;
+      width: 42px;
+      margin-right: 1rem;
+
+      svg {
+        height: 100%;
+        width: 100%;
+
+        path {
+          fill: $color-main !important;
+        }
+      }
+    }
+  }
+
+  .section__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    max-width: 900px;
+    margin: auto;
+  }
+
+  .button-wrapper {
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  .button {
+    display: inline-block;
+  }
+}
+
+.section--fiches {
+  background: $color-white-2;
+
+  .fiche {
+    background: $color-white;
+    overflow: hidden;
+    position: relative;
+    padding: 1.5rem;
+    box-shadow: 0 4px 9px rgba(0, 0, 0, .1);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: -4px 8px 15px rgba(0, 0, 0, .1);
+      transform: translate3d(5px, -5px, 0);
+
+      .arrow svg {
+        // transform: translate3d(10px, 0, 0);
+      }
+
+      .arrow circle {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    .date {
+      opacity: .5;
+      font-size: .8rem;
+      margin-bottom: .5rem;
+    }
+
+    .tag-list {
+      display: flex;
+    }
+
+    .tag-list__entry {
+      border: 1px solid $color-main;
+      color: $color-main;
+      padding: .3em;
+      margin-bottom: .5rem;
+      line-height: 1;
+      border-radius: 3px;
+      font-size: .8rem;
+
+      &:not(:last-child) {
+        margin-right: .5rem;
+      }
+    }
+
+    .description {
+      margin: 0;
+      color: $color-gray-2;
+      font-size: .9rem;
+    }
+
+    .arrow {
+      display: flex;
+      margin-top: 1rem;
+
+      svg {
+        margin-left: auto;
+        transition: transform 0.3s ease;
+
+        circle {
+          stroke-dasharray: 95;
+          stroke-dashoffset: 95;
+          transition: stroke-dashoffset .3s ease .1s;
+        }
+      }
+
+      g {
+        stroke: $color-main;
+      }
+    }
+  }
+}
+
+.section--team {
+  border-top: 1px solid $color-main-lighter;
+  // border-bottom: 1px solid $color-main-lighter;
+  // box-shadow: 0 1px 3px rgba(0, 0, 0, .16), 0 1px 2px rgba(0, 0, 0, .12);
+  // position: relative;
+  // z-index: 2;
+
+  .section__list {
+    max-width: 660px;
+    margin: auto;
+    grid-gap: 4rem;
+  }
+
+  .member {
+    text-align: center;
+  }
+
+  .portrait {
+    border-radius: 50%;
+    overflow: hidden;
+    background: $color-main;
+    height: 120px;
+    width: 120px;
+    position: relative;
+    display: inline-block;
+    margin-bottom: .5rem;
+
+    svg {
+      width: 85%;
+      height: 85%;
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      path {
+        fill: $color-white !important;
+      }
+    }
+  }
+
+  .title {
+    color: $color-gray-2;
+    font-size: .9rem;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.section--map {
+  padding: 0;
+  height: 500px;
+  background: url("/images/map-2.png");
+  // background-size: cover;
+  background-size: 100%;
+  background-position: center;
+  position: relative;
+  // box-shadow: inset 0 1px 3px rgba(0, 0, 0, .16), inset 0 1px 2px rgba(0, 0, 0, .12);
+  // box-shadow: inset 0 0 10px rgba(0, 0, 0, .2);
+  box-shadow: inset 1px 4px 9px -6px;
+
+  .card {
+    position: absolute;
+    right: calc(50% - 300px);
+    // right: 2rem;
+    // bottom: 2rem;
+    // width: 400px;
+    top: 50%;
+    transform: translateY(-50%);
+    // box-shadow: 0 4px 9px rgba(0, 0, 0, .1);
+
+    .card__inner {
+      text-align: left;
+      background: $color-white;
+      padding: 1.5rem;
+      // box-shadow: 0 4px 9px rgba(0, 0, 0, .1);
+      border-radius: 5px;
+      border: 1px solid $color-main;
+      position: relative;
+      z-index: 1;
+    }
+
+    // .card__arrow {
+    &:after {
+      $size: 12px;
+      content: '';
+      width: 0;
+      height: 0;
+      border-top: $size solid transparent;
+      border-bottom: $size solid transparent;
+      border-right: $size solid $color-main;
+      position: absolute;
+      left: -$size + 1px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
+    }
+
+    &:before {
+      $size: 12px;
+      content: '';
+      width: 0;
+      height: 0;
+      border-top: $size solid transparent;
+      border-bottom: $size solid transparent;
+      border-right: $size solid $color-white;
+      position: absolute;
+      left: -$size + 2px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+    }
+
+    .heading-1 {
+      text-align: left;
+    }
+
+    .small-list {
+      color: $color-gray-2;
+    }
+
+    .button {
+      margin-top: 1rem;
+    }
+  }
+}
