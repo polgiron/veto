@@ -1,18 +1,19 @@
-// $color-main: #e74c3c;
-// $color-main-lighter: #ec7063;
-// $color-main: #ec7063;
-$color-main: #974e67;
-// $color-main-lighter: #f9d4d1;
-$color-main-lighter: rgba($color-main, .25);
+$color-main-lighter: #c86888;
+// $color-main: #974e67;
+$color-main: $color-main-lighter;
 $color-white: #fff;
-// $color-white-2: #fbfbfb;
 $color-white-2: #faf6f3;
 $color-black: #000;
 // $color-gray: #353631;
 $color-gray: #6f6c69;
-$color-gray-2: #6f6c69;
+// $color-gray-2: #6f6c69;
 $color-gray-3: #f1f1f1;
 
 $content-max-width: 1200px;
 $header-height: 56px;
 $padding-section: 4rem;
+
+$font-family: 'Open Sans', sans-serif;
+// $font-family: 'Lato', sans-serif;
+// $font-family: 'Source Sans Pro', sans-serif;
+// $font-family: 'Ubuntu', sans-serif;

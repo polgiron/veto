@@ -10,7 +10,9 @@
     <title>{{ title|default("veto") }}</title>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Material+Icons" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Material+Icons" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400|Material+Icons" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400|Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shoelace-css/1.0.0-beta10/shoelace.css">
     <link href="/css/site.css" rel="stylesheet">
 
@@ -31,7 +33,13 @@
               <li class="main-nav__entry"><a href="#">Contact</a></li>
             </ul>
           </nav>
-          <a class="button-cta" href="#">Prendre rendez-vous</a>
+          <a class="button button--cta" href="tel:07123123123">
+            <i class="material-icons">phone</i>
+            <div class="right">
+              <span class="text">Prendre rendez-vous</span>
+              <span class="phone">06 01 12 12 23</span>
+            </div>
+          </a>
         </div>
       </header>
       <main class="main">

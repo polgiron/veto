@@ -6,6 +6,8 @@
   --button-bg-color-primary: $color-main;
   --input-border-color-focus: $color-main;
   --hr-spacing: .5rem;
+  --font-family: $font-family;
+  --headings-font-family: $font-family;
 }
 
 // html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em,
@@ -25,14 +27,15 @@
 // }
 
 html {
-  box-sizing: border-box;
-  cursor: default;
-  font-family: 'Open Sans', sans-serif;
+  // box-sizing: border-box;
+  // cursor: default;
+  // font-family: 'Ubuntu', sans-serif;
+  // font-family: 'Open Sans', sans-serif;
   // font-family: 'Source Sans Pro', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  line-height: 1.5;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
+  // -webkit-font-smoothing: antialiased;
+  // line-height: 1.5;
+  // -ms-text-size-adjust: 100%;
+  // -webkit-text-size-adjust: 100%;
 }
 
 ul {
