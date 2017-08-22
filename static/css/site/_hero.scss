@@ -23,11 +23,11 @@
   position: absolute;
   top: calc(50% + 56px / 2);
   transform: translateY(-50%);
-  left: 0;
-  width: 45%;
+  left: 2rem;
+  width: 500px;
 
   > div {
-    padding: 2rem;
+    padding: 1.5rem;
   }
 
   .top {
@@ -36,7 +36,7 @@
   }
 
   .bottom {
-    background: rgba($color-white, .7);
+    background: rgba($color-white, .8);
   }
 
   .small-list__entry {
@@ -52,7 +52,6 @@
   .rdv-wrapper {
     border-left: 1px solid $color-main;
     padding-left: 1rem;
-    opacity: .7;
   }
 }
 
