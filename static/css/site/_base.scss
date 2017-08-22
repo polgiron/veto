@@ -8,6 +8,7 @@
   --hr-spacing: .5rem;
   --font-family: $font-family;
   --headings-font-family: $font-family;
+  --font-weight: 400;
 }
 
 // html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em,
@@ -32,10 +33,10 @@ html {
   // font-family: 'Ubuntu', sans-serif;
   // font-family: 'Open Sans', sans-serif;
   // font-family: 'Source Sans Pro', sans-serif;
-  // -webkit-font-smoothing: antialiased;
   // line-height: 1.5;
-  // -ms-text-size-adjust: 100%;
-  // -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
 ul {
@@ -53,6 +54,11 @@ button {
   background: transparent;
   cursor: pointer;
   border: 0;
+  box-shadow: 0 0 0 transparent;
+
+  // &:hover {
+  //   box-shadow: 0 0 0 transparent;
+  // }
 }
 
 img {
@@ -66,13 +72,6 @@ img {
   // text-transform: uppercase;
   text-align: center;
 }
-
-// .heading-2 {
-//   font-size: 3rem;
-//   margin-bottom: 3rem;
-//   color: $color-main;
-//   text-align: center;
-// }
 
 .heading-2 {
   font-size: 1.5rem;

@@ -1,0 +1,88 @@
+.animate-section.is-animated .animate-element {
+  opacity: 1;
+  transform: scale(1) translate3d(0, 0, 0);
+}
+
+.animate-element {
+  transition: all .5s;
+  opacity: 0;
+  transform: scale(.8);
+
+  @for $i from 1 to 12 {
+    &:nth-child(#{$i}) {
+      transition-delay: $i * 150ms;
+    }
+  }
+}
+
+.animate-element--translate {
+  opacity: 0;
+  transform: scale(1) translate3d(0, 20px, 0);
+}
+
+.animate-element--fade {
+  opacity: 0;
+  transform: scale(1) translate3d(0, 0, 0);
+}
+
+.header {
+  animation: header-anim .6s both .4s;
+}
+
+.hero__bg {
+  animation: hero-bg-anim 10s both;
+}
+
+.hero__content {
+  animation: hero-content-anim .6s both .4s;
+}
+
+.hero__scroll-button {
+  animation: hero-button-anim .6s both .4s;
+}
+
+@keyframes header-anim {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes hero-bg-anim {
+  0% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes hero-content-anim {
+  0% {
+    opacity: 0;
+    transform: translate3d(-10%, -50%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, -50%, 0);
+  }
+}
+
+@keyframes hero-button-anim {
+  0% {
+    opacity: 0;
+    transform: scale(.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

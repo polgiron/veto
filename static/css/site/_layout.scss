@@ -30,7 +30,7 @@
   }
 }
 
-.section-title {
+.section--title {
   padding: $padding-section;
   position: relative;
   overflow: hidden;
@@ -47,37 +47,37 @@
   }
 }
 
-.bg-image {
-  height: 400px;
-  width: 400px;
-  position: absolute;
-  bottom: -120px;
-  left: -50px;
-  opacity: .05;
-  transform: rotate(-20deg);
+// .bg-image {
+//   height: 400px;
+//   width: 400px;
+//   position: absolute;
+//   bottom: -120px;
+//   left: -50px;
+//   opacity: .05;
+//   transform: rotate(-20deg);
+//
+//   svg {
+//     height: 100%;
+//     width: 100%;
+//
+//     path {
+//       fill: $color-main !important;
+//     }
+//   }
+// }
 
-  svg {
-    height: 100%;
-    width: 100%;
-
-    path {
-      fill: $color-main !important;
-    }
-  }
-}
-
-.section-half {
+.section--half {
   display: flex;
 
   &:nth-child(2n) {
     background: $color-white;
 
-    .section-half__text {
+    .section--half__text {
       width: 55%;
       order: 1;
     }
 
-    .section-half__image {
+    .section--half__image {
       width: 45%;
     }
   }
@@ -87,12 +87,16 @@
   }
 }
 
-.section-half__text {
+.section--half__text {
   width: 45%;
   padding: $padding-section;
+
+  a {
+    color: $color-main;
+  }
 }
 
-.section-half__image {
+.section--half__image {
   width: 55%;
 
   img {
@@ -148,23 +152,19 @@
 .section--fiches {
   background: $color-white-2;
 
-  .fiche {
+  .fiche--inner {
     background: $color-white;
     overflow: hidden;
     position: relative;
     padding: 1.5rem;
-    box-shadow: 0 4px 9px rgba(0, 0, 0, .1);
     border-radius: 3px;
-    transition: all 0.3s ease;
     cursor: pointer;
+    transition: all .3s;
+    box-shadow: 0 4px 9px rgba(0, 0, 0, .1);
 
     &:hover {
       box-shadow: -4px 8px 15px rgba(0, 0, 0, .1);
       transform: translate3d(5px, -5px, 0);
-
-      .arrow svg {
-        // transform: translate3d(10px, 0, 0);
-      }
 
       .arrow circle {
         stroke-dashoffset: 0;
@@ -197,7 +197,7 @@
 
     .description {
       margin: 0;
-      color: $color-gray;
+      color: $color-gray-2;
       font-size: .9rem;
     }
 
@@ -225,10 +225,6 @@
 
 .section--team {
   border-top: 1px solid $color-main-lighter;
-  // border-bottom: 1px solid $color-main-lighter;
-  // box-shadow: 0 1px 3px rgba(0, 0, 0, .16), 0 1px 2px rgba(0, 0, 0, .12);
-  // position: relative;
-  // z-index: 2;
 
   .section__list {
     max-width: 660px;
@@ -278,36 +274,35 @@
   padding: 0;
   height: 500px;
   background: url("/images/map-2.png");
-  // background-size: cover;
-  background-size: 100%;
+  background-size: cover;
+  // background-size: 100%;
   background-position: center;
   position: relative;
-  // box-shadow: inset 0 1px 3px rgba(0, 0, 0, .16), inset 0 1px 2px rgba(0, 0, 0, .12);
-  // box-shadow: inset 0 0 10px rgba(0, 0, 0, .2);
   box-shadow: inset 1px 4px 9px -6px;
+
+  &.is-animated .card {
+    transform: translate3d(0, -50%, 0) scale(1);
+    opacity: 1;
+  }
 
   .card {
     position: absolute;
     right: calc(50% - 300px);
-    // right: 2rem;
-    // bottom: 2rem;
-    // width: 400px;
     top: 50%;
-    transform: translateY(-50%);
-    // box-shadow: 0 4px 9px rgba(0, 0, 0, .1);
+    transform: translate3d(0, -50%, 0) scale(.7);
+    opacity: 0;
+    transition: all .4s;
 
     .card__inner {
       text-align: left;
       background: $color-white;
       padding: 1.5rem;
-      // box-shadow: 0 4px 9px rgba(0, 0, 0, .1);
       border-radius: 5px;
       border: 1px solid $color-main;
       position: relative;
       z-index: 1;
     }
 
-    // .card__arrow {
     &:after {
       $size: 12px;
       content: '';
