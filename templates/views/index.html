@@ -6,59 +6,57 @@
 {% block content %}
   <section class="hero">
     <img class="hero__bg" src="/images/dog-6.jpg">
-    <div class="hero__content">
-      <div class="top">
-        <h1 class="heading-1">Urgences <br> 24h/24 - 7j/7</h1>
-        <h2 class="heading-2">Clinique veterinaire</h2>
-        <ul class="small-list">
-          <li class="small-list__entry">
-            <i class="material-icons">place</i> 54 rue des lilas PARIS 20e
-          </li>
-          <li class="small-list__entry">
-            <i class="material-icons">train</i> <img src="/images/ligne-3.png">
-          </li>
-          <li class="small-list__entry">
-            <i class="material-icons">phone</i> <a href="tel:07123123123">07123123123</a>
-          </li>
-        </ul>
-        <a class="hero__scroll-last">
-          <span>Voir le plan d'accès</span>
-          {% include "svg/icon-arrow-circle.svg" %}
-        </a>
-      </div>
-      <div class="bottom">
-        <h3 class="heading-3">Sur rendez-vous:</h3>
-        <div class="rdv-wrapper">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore architecto illo maxime doloribus voluptas...
+    <div class="content-wrapper">
+      <div class="hero__content">
+        <div class="top">
+          <h1 class="heading-1">Urgences <br> 24h/24 - 7j/7</h1>
+          <h2 class="heading-2">Clinique veterinaire</h2>
+          <ul class="small-list">
+            <li class="small-list__entry">
+              <i class="material-icons">place</i> 54 rue des lilas PARIS 20e
+            </li>
+            <li class="small-list__entry">
+              <i class="material-icons">train</i> <img src="/images/ligne-3.png">
+            </li>
+            <li class="small-list__entry">
+              <i class="material-icons">phone</i> <a href="tel:07123123123">07123123123</a>
+            </li>
+          </ul>
+          <a class="hero__scroll-last">
+            <span>Voir le plan d'accès</span>
+            {% include "svg/icon-arrow-circle.svg" %}
+          </a>
+        </div>
+        <div class="bottom">
+          <h3 class="heading-3">Sur rendez-vous:</h3>
+          <div class="rdv-wrapper">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore architecto illo maxime doloribus voluptas...
+          </div>
         </div>
       </div>
+      <a class="hero__scroll-first">
+        <div class="circle">
+          <i class="material-icons">keyboard_arrow_down</i>
+        </div>
+      </a>
     </div>
-    <a class="hero__scroll-first">
-      <div class="circle">
-        <i class="material-icons">keyboard_arrow_down</i>
-      </div>
-    </a>
   </section>
-  <!-- <section id="first-section" class="section--title animate-section"> -->
   <section id="first-section" class="section--title">
-    <!-- <div class="animate-element animate-element--translate"> -->
       <h1 class="title">Bienvenue chez <span>UC VET</span></h1>
-    <!-- </div> -->
-    <!-- <div class="animate-element animate-element--translate"> -->
       <h1 class="heading-1">Urgence clinique veterinaire</h1>
-    <!-- </div> -->
   </section>
-  <!-- <section class="section--half animate-section"> -->
   <section class="section--half">
     <div class="section--half__text">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-        <br>
-        <br>
-        <a href="#">This is a link...</a> <br>
-        <a href="#">This is a link...</a> <br>
-        <a href="#">This is a link...</a>
-      </p>
+      <div class="inner">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+          <br>
+          <br>
+          <a href="#">This is a link...</a> <br>
+          <a href="#">This is a link...</a> <br>
+          <a href="#">This is a link...</a>
+        </p>
+      </div>
     </div>
     <div class="section--half__image">
       <img src="/images/cat.jpg">
@@ -66,14 +64,16 @@
   </section>
   <section class="section--half animate-section">
     <div class="section--half__text">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-        <br>
-        <br>
-        <a href="#">This is a link...</a> <br>
-        <a href="#">This is a link...</a> <br>
-        <a href="#">This is a link...</a>
-      </p>
+      <div class="inner">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+          <br>
+          <br>
+          <a href="#">This is a link...</a> <br>
+          <a href="#">This is a link...</a> <br>
+          <a href="#">This is a link...</a>
+        </p>
+      </div>
     </div>
     <div class="section--half__image">
       <img src="/images/dog-2.jpg">

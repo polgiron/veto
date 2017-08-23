@@ -1,7 +1,9 @@
-.main-wrapper,
+// .main-wrapper,
 .content-wrapper {
-  // max-width: $content-max-width;
+  max-width: $content-max-width;
   margin: auto;
+  position: relative;
+  height: 100%;
 }
 
 .main-wrapper {
@@ -47,25 +49,6 @@
   }
 }
 
-// .bg-image {
-//   height: 400px;
-//   width: 400px;
-//   position: absolute;
-//   bottom: -120px;
-//   left: -50px;
-//   opacity: .05;
-//   transform: rotate(-20deg);
-//
-//   svg {
-//     height: 100%;
-//     width: 100%;
-//
-//     path {
-//       fill: $color-main !important;
-//     }
-//   }
-// }
-
 .section--half {
   display: flex;
 
@@ -75,6 +58,11 @@
     .section--half__text {
       width: 55%;
       order: 1;
+
+      .inner {
+        margin-left: 0;
+        margin-right: auto;
+      }
     }
 
     .section--half__image {
@@ -89,7 +77,15 @@
 
 .section--half__text {
   width: 45%;
-  padding: $padding-section;
+  display: flex;
+
+  .inner {
+    // width: $content-max-width * 45 / 100;
+    // width: 41%;
+    max-width: 565px;
+    margin-left: auto;
+    padding: $padding-section;
+  }
 
   a {
     color: $color-main;
