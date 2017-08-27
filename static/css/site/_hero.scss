@@ -1,13 +1,21 @@
 .hero {
   height: 100vh;
   max-height: 700px;
-  // height: calc(100vh - 56px);
-  // background: url('/images/dog.jpg');
-  // background-size: cover;
-  // background-position: center;
-  // margin-top: $header-height;
   position: relative;
   overflow: hidden;
+
+  @media (max-width: $screen-xs-max) {
+    height: auto;
+    background: $color-white-2;
+    max-height: 100%;
+    margin-bottom: -2rem;
+  }
+
+  .content-wrapper {
+    @media (max-width: $screen-xs-max) {
+      padding: 0;
+    }
+  }
 }
 
 .hero__bg {
@@ -17,6 +25,11 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+
+  @media (max-width: $screen-xs-max) {
+    position: relative;
+    height: 300px;
+  }
 }
 
 .hero__content {
@@ -28,6 +41,15 @@
   border-radius: 3px;
   overflow: hidden;
 
+  @media (max-width: $screen-xs-max) {
+    position: relative;
+    bottom: 0;
+    width: 90%;
+    top: -3rem;
+    left: 50%;
+    box-shadow: 0 4px 9px rgba(0, 0, 0, .1);
+  }
+
   > div {
     padding: 1.5rem;
   }
@@ -35,6 +57,10 @@
   .top {
     background: $color-white;
     position: relative;
+
+    @media (max-width: $screen-xs-max) {
+      padding-bottom: 0;
+    }
   }
 
   .bottom {
@@ -43,12 +69,20 @@
 
   .small-list__entry {
     font-size: 1.2rem;
+
+    @media (max-width: $screen-xs-max) {
+      font-size: 1rem;
+    }
   }
 
   .heading-1 {
     text-transform: uppercase;
     text-align: left;
     margin-bottom: 1rem;
+
+    @media (max-width: $screen-xs-max) {
+      font-size: 2rem;
+    }
   }
 
   .rdv-wrapper {
@@ -66,6 +100,10 @@
   right: 1.5rem;
   bottom: 1.5rem;
   cursor: pointer;
+
+  @media (max-width: $screen-xs-max) {
+    display: none;
+  }
 
   &:hover {
     text-decoration: none;
@@ -104,9 +142,9 @@
   width: 54px;
   padding: 0;
 
-  // @media (max-width: $breakpoint-768) {
-  //   display: none;
-  // }
+  @media (max-width: $screen-xs-max) {
+    display: none;
+  }
 
   .circle {
     animation: scroll-button-animation 2s infinite ease-in-out both;

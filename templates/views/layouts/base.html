@@ -4,15 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>{{ title|default("veto") }}</title>
+    <title>{{ title|default("UC VET - Clinique vétérinaire") }}</title>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Material+Icons" rel="stylesheet">
-    <!-- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400|Material+Icons" rel="stylesheet"> -->
-    <!-- <link href="https://fonts.googleapis.com/css?family=Lato:300,400|Material+Icons" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shoelace-css/1.0.0-beta10/shoelace.css">
     <link href="/css/site.css" rel="stylesheet">
 
@@ -23,7 +21,18 @@
     <div class="main-wrapper">
       <header class="header">
         <div class="content-wrapper">
-          <a class="main-logo" href="/"><img src="/images/logo.png"></a>
+          <div class="mobile-menu-button-wrapper">
+            <div class="mobile-menu-button">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+          <a class="main-logo" href="/">
+            <!-- <img src="/images/logo.png"> -->
+            UC VET LOGO
+          </a>
           <nav class="main-nav">
             <ul class="main-nav__list">
               <li class="main-nav__entry is-active"><a href="#">Accueil</a></li>
@@ -36,7 +45,7 @@
           <a class="button button--cta" href="tel:07123123123">
             <i class="material-icons">phone</i>
             <div class="right">
-              <span class="text">Prendre rendez-vous</span>
+              <span class="text">Contactez nous</span>
               <span class="phone">06 01 12 12 23</span>
             </div>
           </a>
@@ -55,6 +64,7 @@
     <script src="/js/lib/jquery-2.1.4.min.js"></script>
     <script src="/js/base.js"></script>
     <script src="/js/main.js"></script>
+    <script src="/js/mobile.js"></script>
     <script src="/js/app.js"></script>
     {% block js %}{% endblock %}
   </body>

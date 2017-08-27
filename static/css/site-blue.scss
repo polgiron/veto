@@ -1,4 +1,7 @@
 @import "site/variables";
+$color-main: #3498DB;
+$color-main-lighter: rgba($color-main, .5);
+$color-white-2: #f9fcfe;
 @import "site/base";
 @import "site/hamburger";
 @import "site/animations";

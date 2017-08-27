@@ -31,10 +31,18 @@
 
 .hero__bg {
   animation: hero-bg-anim 10s both;
+
+  @media (max-width: $screen-xs-max) {
+    animation: 0;
+  }
 }
 
 .hero__content {
   animation: hero-content-anim .6s both .6s;
+
+  @media (max-width: $screen-xs-max) {
+    animation: hero-content-anim-mobile .6s both .6s;
+  }
 }
 
 .hero__scroll-first {
@@ -66,13 +74,24 @@
 @keyframes hero-content-anim {
   0% {
     opacity: 0;
-    // transform: translate3d(-10%, -50%, 0);
     transform: translate3d(0, -60%, 0);
   }
 
   100% {
     opacity: 1;
     transform: translate3d(0, -50%, 0);
+  }
+}
+
+@keyframes hero-content-anim-mobile {
+  0% {
+    opacity: 0;
+    transform: translate3d(-50%, -10%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(-50%, 0, 0);
   }
 }
 

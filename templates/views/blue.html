@@ -1,0 +1,139 @@
+{% extends "layouts/base.html" %}
+
+{% block css %}
+  <link href="/css/site-blue.css" rel="stylesheet">
+{% endblock %}
+
+{% import "mixins/fiche.html" as Fiche %}
+{% import "mixins/member.html" as Member %}
+
+{% block content %}
+  <section class="hero">
+    <img class="hero__bg" src="/images/dog-6.jpg">
+    <div class="content-wrapper">
+      <div class="hero__content">
+        <div class="top">
+          <h1 class="heading-1">Urgences <br> 24h/24 - 7j/7</h1>
+          <h2 class="heading-2">Clinique veterinaire !!!</h2>
+          <ul class="small-list">
+            <li class="small-list__entry">
+              <i class="material-icons">place</i> 54 rue des lilas PARIS 20e
+            </li>
+            <li class="small-list__entry">
+              <i class="material-icons">train</i> <img src="/images/ligne-3.png">
+            </li>
+            <li class="small-list__entry">
+              <i class="material-icons">phone</i> <a href="tel:07123123123">07123123123</a>
+            </li>
+          </ul>
+          <a class="hero__scroll-last">
+            <span>Voir le plan d'accès</span>
+            {% include "svg/icon-arrow-circle.svg" %}
+          </a>
+        </div>
+        <div class="bottom">
+          <h3 class="heading-3">Sur rendez-vous:</h3>
+          <div class="rdv-wrapper">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore architecto illo maxime doloribus voluptas...
+          </div>
+        </div>
+      </div>
+      <a class="hero__scroll-first">
+        <div class="circle">
+          <i class="material-icons">keyboard_arrow_down</i>
+        </div>
+      </a>
+    </div>
+  </section>
+  <section id="first-section" class="section--title">
+      <h1 class="title">Bienvenue chez <span>UC VET</span></h1>
+      <h1 class="heading-1">Urgence clinique veterinaire</h1>
+  </section>
+  <section class="section--half">
+    <div class="section--half__text">
+      <div class="inner">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+          <br>
+          <br>
+          <a href="#">This is a link...</a> <br>
+          <a href="#">This is a link...</a> <br>
+          <a href="#">This is a link...</a>
+        </p>
+      </div>
+    </div>
+    <div class="section--half__image">
+      <img src="/images/cat.jpg">
+    </div>
+  </section>
+  <section class="section--half animate-section">
+    <div class="section--half__text">
+      <div class="inner">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+          <br>
+          <br>
+          <a href="#">This is a link...</a> <br>
+          <a href="#">This is a link...</a> <br>
+          <a href="#">This is a link...</a>
+        </p>
+      </div>
+    </div>
+    <div class="section--half__image">
+      <img src="/images/dog-2.jpg">
+    </div>
+  </section>
+  <section class="section section--fiches animate-section">
+    <div class="section__header">
+      <div class="icon">
+        {% include "svg/icon-health.svg" %}
+      </div>
+      <h1 class="heading-1">Fiches chirurgicales</h1>
+    </div>
+    <ul class="section__list">
+      {{ Fiche.fiche() }}
+      {{ Fiche.fiche() }}
+      {{ Fiche.fiche() }}
+    </ul>
+    <div class="button-wrapper">
+      <a class="button" href="/fiches">Voir la totalité des fiches</a>
+    </div>
+  </section>
+  <section class="section section--team animate-section">
+    <div class="section__header">
+      <h1 class="heading-1">Notre tendre équipe</h1>
+    </div>
+    <ul class="section__list">
+      {{ Member.member() }}
+      {{ Member.member() }}
+      {{ Member.member() }}
+      {{ Member.member() }}
+      {{ Member.member() }}
+    </ul>
+    <div class="button-wrapper">
+      <a class="button" href="/team">Voir l'équipe au complet</a>
+    </div>
+  </section>
+  <section id="last-section" class="section section--map animate-section">
+    <div class="card">
+      <div class="card__arrow"></div>
+      <div class="card__inner">
+        <h1 class="heading-1">Accès</h1>
+        <p class="address">Clinique vétérinaire UC VET <br> Urgences 24h/24 7j/7</p>
+        <hr>
+        <ul class="small-list">
+          <li class="small-list__entry">
+            <i class="material-icons">place</i> 54 rue des lilas PARIS 20e
+          </li>
+          <li class="small-list__entry">
+            <i class="material-icons">train</i> <img src="/images/ligne-3.png">
+          </li>
+          <li class="small-list__entry">
+            <i class="material-icons">phone</i> <a href="tel:07123123123">07123123123</a>
+          </li>
+        </ul>
+        <a class="button" href="https://www.google.co.uk/maps/dir//54+Rue+Stendhal,+75020+Paris,+France/@48.8627742,2.3983237,17z/data=!4m16!1m7!3m6!1s0x47e66d8f9d28fe45:0x4240f4dea8eef73a!2s54+Rue+Stendhal,+75020+Paris,+France!3b1!8m2!3d48.8627742!4d2.4005124!4m7!1m0!1m5!1m1!1s0x47e66d8f9d28fe45:0x4240f4dea8eef73a!2m2!1d2.4005124!2d48.8627742" target="_blank">Voir le plan</a>
+      </div>
+    </div>
+  </section>
+{% endblock %}

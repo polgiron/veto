@@ -5,24 +5,7 @@ var keystone = require('keystone');
   Initialises the standard view locals
 */
 exports.initLocals = function (req, res, next) {
-  res.locals.navLinks = [
-    { label: 'Contact', key: 'contact', href: '/contact' },
-  ];
-
   res.locals.user = req.user;
-
-  // Gallery menu
-  // var view = new keystone.View(req, res);
-  var Gallery = keystone.list('Gallery');
-  // console.log('---what');
-  // view.on('init', function(next) {
-    // console.log('-----init');
-    Gallery.model.find().exec(function(err, result) {
-      res.locals.galleryNav = result;
-      // next(err);
-    });
-  // });
-
   next();
 };
 

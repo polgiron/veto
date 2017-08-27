@@ -1,8 +1,12 @@
-$color-main-lighter: #c86888;
+$color-main: #c86888;
 // $color-main: #974e67;
-$color-main: $color-main-lighter;
+// $color-main: tomato;
+// $color-main: #ff0082;
+// $color-main: #3498DB;
+$color-main-lighter: rgba($color-main, .5);
 $color-white: #fff;
 $color-white-2: #faf6f3;
+// $color-white-2: #f9fcfe;
 $color-black: #000;
 // $color-gray: #353631;
 $color-gray: #6f6c69;
@@ -16,4 +20,10 @@ $padding-section: 4rem;
 $font-family: 'Open Sans', sans-serif;
 // $font-family: 'Lato', sans-serif;
 // $font-family: 'Source Sans Pro', sans-serif;
-// $font-family: 'Ubuntu', sans-serif;
+
+$screen-sm-min: 768px;
+$screen-xs-max: ($screen-sm-min - 1);
+$screen-md-min: 992px;
+$screen-sm-max: ($screen-md-min - 1);
+$screen-lg-min: 1200px;
+$screen-md-max: ($screen-lg-min - 1);
