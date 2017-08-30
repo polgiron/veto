@@ -14,6 +14,21 @@
   padding: 0 2rem;
 }
 
+.main {
+  min-height: calc(100vh - #{$header-height});
+  padding-top: $header-height;
+}
+
+.home .main {
+  padding: 0;
+}
+
+.small-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 .small-list__entry {
   display: flex;
   align-items: center;
@@ -45,6 +60,7 @@
 
   .title {
     font-size: 4rem;
+    color: $color-gray;
 
     @media (max-width: $screen-sm-max) {
       font-size: 3rem;
@@ -147,7 +163,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
 
     @media (max-width: $screen-xs-max) {
       margin-bottom: 2rem;
@@ -190,6 +206,8 @@
     grid-gap: 2rem;
     max-width: 900px;
     margin: auto;
+    list-style: none;
+    padding: 0;
   }
 
   .button-wrapper {
@@ -227,7 +245,7 @@
   }
 
   .fiche {
-    @media (max-width: $screen-xs-max) {
+    @media (max-width: $screen-sm-max) {
       max-width: 300px;
       margin: auto;
     }
@@ -249,30 +267,6 @@
 
       .arrow circle {
         stroke-dashoffset: 0;
-      }
-    }
-
-    .date {
-      opacity: .5;
-      font-size: .8rem;
-      margin-bottom: .5rem;
-    }
-
-    .tag-list {
-      display: flex;
-    }
-
-    .tag-list__entry {
-      border: 1px solid $color-main;
-      color: $color-main;
-      padding: .3em;
-      margin-bottom: .5rem;
-      line-height: 1;
-      border-radius: 3px;
-      font-size: .8rem;
-
-      &:not(:last-child) {
-        margin-right: .5rem;
       }
     }
 
@@ -304,6 +298,34 @@
   }
 }
 
+.date {
+  opacity: .5;
+  font-size: .8rem;
+  margin-bottom: .5rem;
+}
+
+.tag-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 450px;
+}
+
+.tag-list__entry {
+  border: 1px solid $color-main;
+  color: $color-main;
+  padding: .3em;
+  margin-bottom: .5rem;
+  line-height: 1;
+  border-radius: 3px;
+  font-size: .8rem;
+
+  &:not(:last-child) {
+    margin-right: .5rem;
+  }
+}
+
 .section--team {
   border-top: 1px solid $color-main-lighter;
 
@@ -315,6 +337,10 @@
     @media (max-width: $screen-xs-max) {
       grid-template-columns: repeat(1, 1fr);
       grid-gap: 2rem;
+    }
+
+    @media (min-width: $screen-xlg-min) {
+      max-width: 1000px;
     }
   }
 
@@ -354,6 +380,10 @@
   p {
     margin: 0;
   }
+}
+
+.team .section--team {
+  border: 0;
 }
 
 .section--map {

@@ -1,8 +1,13 @@
+// @import "/nodes_modules/shoelace-css/dist/shoelace.css";
+// @import "lib/shoelace/shoelace.css";
 @import "site/variables";
 @import "site/base";
 @import "site/hamburger";
 @import "site/animations";
+@import "site/typo";
 @import "site/layout";
 @import "site/header";
 @import "site/footer";
 @import "site/hero";
+@import "site/fiche";
+@import "site/contact";

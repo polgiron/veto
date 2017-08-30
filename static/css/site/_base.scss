@@ -6,10 +6,13 @@
   --link-color: $color-main;
   --button-bg-color-primary: $color-main;
   --input-border-color-focus: $color-main;
-  --hr-spacing: .5rem;
   --font-family: $font-family;
   --headings-font-family: $font-family;
   --font-weight: 400;
+
+  --hr-spacing: .5rem;
+  --hr-margin-y: .5rem;
+  --hr-margin-x: 0;
 }
 
 // html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em,
@@ -39,9 +42,9 @@ html {
 }
 
 ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  // list-style: none;
+  // margin: 0;
+  // padding: 0;
 }
 
 a {
@@ -49,15 +52,15 @@ a {
   text-decoration: none;
 }
 
-button {
+.button-reset {
   background: transparent;
   cursor: pointer;
   border: 0;
   box-shadow: 0 0 0 transparent;
 
-  // &:hover {
-  //   box-shadow: 0 0 0 transparent;
-  // }
+  &:hover {
+    box-shadow: 0 0 0 transparent;
+  }
 }
 
 img {
@@ -65,48 +68,36 @@ img {
   max-width: 100%;
 }
 
-.heading-1 {
-  // margin-bottom: 3rem;
-  color: $color-main;
-  // text-transform: uppercase;
-  text-align: center;
 
-  @media (max-width: $screen-sm-max) {
-    font-size: 2rem;
+
+// WORKAROUND TMP
+.input-icon {
+  position: relative;
+  width: 100%;
+
+  :first-child:not(input):not(select),
+  :last-child:not(input):not(select) {
+    position: absolute;
+    top: 0;
+    left: .5em;
+    height: 100%;
+    line-height: 32px;
+    color: #aaa;
+    vertical-align: middle;
+    pointer-events: none;
   }
 
-  @media (max-width: $screen-xs-max) {
-    font-size: 1.4rem;
-    font-weight: 400;
-  }
-}
-
-.heading-2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: $color-main;
-  text-transform: uppercase;
-}
-
-.heading-3 {
-  font-size: 1.2rem;
-  font-weight: 500;
-  margin-bottom: .5rem;
-
-  @media (max-width: $screen-xs-max) {
-    font-size: 1rem;
+  input:not(:first-child),
+  select:not(:first-child) {
+    padding-left: 2em;
   }
 }
 
-
-// @keyframes fade-in-from-left {
-//   0% {
-//     opacity: 0;
-//     transform: translate3d(-30px, 0, 0);
-//   }
+.input-invalid,
+.input-invalid textarea,
+.input-invalid input,
+.input-invalid select {
+  color: inherit !important;
+  border-color: var(--input-invalid-border-color) !important;
+}
 //
-//   100% {
-//     opacity: 1;
-//     transform: translate3d(0, 0, 0);
-//   }
-// }

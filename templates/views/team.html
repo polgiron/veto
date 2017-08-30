@@ -1,0 +1,33 @@
+{% extends "layouts/base.html" %}
+
+{% import "mixins/member.html" as Member %}
+
+{% block bodyClass %}team{% endblock %}
+
+{% block content %}
+  <div class="team-wrapper content-wrapper">
+    <section class="section section--team animate-section">
+      <div class="section__header">
+        <h1 class="heading-1">Notre tendre équipe</h1>
+      </div>
+      <ul class="section__list">
+        {{ Member.member() }}
+        {{ Member.member() }}
+        {{ Member.member() }}
+        {{ Member.member() }}
+        {{ Member.member() }}
+        {{ Member.member() }}
+        {{ Member.member() }}
+        {{ Member.member() }}
+        {{ Member.member() }}
+        {{ Member.member() }}
+        {{ Member.member() }}
+        {{ Member.member() }}
+        {{ Member.member() }}
+        {{ Member.member() }}
+        {{ Member.member() }}
+        {{ Member.member() }}
+      </ul>
+    </section>
+  </div>
+{% endblock %}

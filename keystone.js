@@ -8,8 +8,8 @@ var cons = require('consolidate');
 var nunjucks = require('nunjucks');
 
 keystone.init({
-  'name': 'veto',
-  'brand': 'veto',
+  'name': 'UC VET',
+  'brand': 'UC VET',
 
   'sass': 'static',
   'static': 'static',
@@ -25,6 +25,13 @@ keystone.init({
 
   'cloudinary secure': true,
   'file limit': '50MB',
+
+  'wysiwyg additional options': { 'external_plugins': { 'uploadimage': '/js/uploadimage/plugin.min.js' } },
+  // 'wysiwyg additional plugins': 'uploadimage',
+  // 'wysiwyg menubar': true,
+  'wysiwyg override toolbar': true,
+  // 'wysiwyg additional buttons': 'styleselect, uploadimage',
+  'wysiwyg additional buttons': 'styleselect, bold italic, alignleft aligncenter alignright alignjustify, bullist numlist outdent indent, link uploadimage, removeformat',
 });
 
 keystone.import('models');
@@ -39,10 +46,9 @@ keystone.set('locals', {
 keystone.set('routes', require('./routes'));
 
 keystone.set('nav', {
+  fiches: ['fiches', 'fiche-categories'],
   enquiries: 'enquiries',
   users: 'users',
-  galleries: 'galleries',
-  images: 'images',
 });
 
 keystone.start();

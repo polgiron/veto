@@ -1,0 +1,65 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+  <div class="fiche-wrapper content-wrapper">
+    <nav class="fiche-nav">
+      <div class="search">
+        <div class="input-icon">
+          <i class="fa fa-fw fa-search"></i>
+          <input id="search-input" type="search" placeholder="rechercher...">
+        </div>
+        <i class="fa fa-fw fa-close" id="close-fiche-menu"></i>
+      </div>
+      <ul class="fiche-nav__list">
+        <li class="fiche-nav__entry {{ 'is-active' if activeFiche == 'introduction' else '' }}">
+          <a href="/fiches">Introduction</a>
+        </li>
+        {% for fiche in fiches %}
+          {% if fiche.publishedDate %}
+            <li class="fiche-nav__entry {{ 'is-active' if fiche.slug == activeFiche else '' }}">
+              <a href="/fiches/{{fiche.slug}}">{{fiche.name}}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+        <li class="no-results">Aucune fiche trouvée</li>
+      </ul>
+    </nav>
+    <div class="fiche-nav__overlay"></div>
+    <div class="fiche-main">
+      <div class="fiche">
+        {{ FM.flashMessages(messages) }}
+        <button id="fiches-mobile-button" type="button" class="button-reset">
+          <i class="fa fa-fw fa-chevron-right"></i>
+          Voir toutes les fiches
+        </button>
+        {% if not fiche %}
+          <div class="fiche__header">
+            <h1 class="heading-1">Fiches pratiques</h1>
+          </div>
+          <hr>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        {% else %}
+          <div class="fiche__header">
+            <h1 class="heading-1">{{fiche.name}}</h1>
+            {% if fiche.publishedDate %}
+              <p class="date">{{ fiche._.publishedDate.format("DD/MM/YYYY") }}</p>
+            {% endif %}
+            {% if fiche.categories and fiche.categories.length %}
+              <ul class="tag-list">
+                {% for cat in fiche.categories %}
+                  <li class="tag-list__entry">{{ cat.name }}</li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+          <hr>
+          <div class="fiche__content">
+            {{ fiche.content|safe }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -10,14 +10,16 @@
     <title>{{ title|default("UC VET - Clinique vétérinaire") }}</title>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Material+Icons" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500|Material+Icons" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shoelace-css/1.0.0-beta10/shoelace.css">
     <link href="/css/site.css" rel="stylesheet">
 
     {% block css %}{% endblock %}
     {% block head %}{% endblock %}
   </head>
-  <body>
+  <body class="{% block bodyClass %}{% endblock %}">
     <div class="main-wrapper">
       <header class="header">
         <div class="content-wrapper">
@@ -30,20 +32,22 @@
             </div>
           </div>
           <a class="main-logo" href="/">
-            <!-- <img src="/images/logo.png"> -->
-            UC VET LOGO
+            <!-- <img src="/images/logo.svg"> <span>UC VET</span> -->
+            <img src="/images/logo-text.svg">
+            <!-- UC VET LOGO -->
           </a>
           <nav class="main-nav">
             <ul class="main-nav__list">
-              <li class="main-nav__entry is-active"><a href="#">Accueil</a></li>
-              <li class="main-nav__entry"><a href="#">La clinique</a></li>
-              <li class="main-nav__entry"><a href="#">L'équipe</a></li>
-              <li class="main-nav__entry"><a href="#">Fiche pratiques</a></li>
-              <li class="main-nav__entry"><a href="#">Contact</a></li>
+              {% for link in navLinks %}
+                <li class="main-nav__entry {{ 'is-active' if link.key == section else '' }}">
+                  <a href="{{ link.href }}">{{ link.label }}</a>
+                </li>
+              {% endfor %}
             </ul>
           </nav>
-          <a class="button button--cta" href="tel:07123123123">
-            <i class="material-icons">phone</i>
+          <a class="button--cta" href="tel:07123123123">
+            <!-- <i class="material-icons">phone</i> -->
+            <i class="fa fa-phone"></i>
             <div class="right">
               <span class="text">Contactez nous</span>
               <span class="phone">06 01 12 12 23</span>
@@ -63,8 +67,9 @@
 
     <script src="/js/lib/jquery-2.1.4.min.js"></script>
     <script src="/js/base.js"></script>
-    <script src="/js/main.js"></script>
     <script src="/js/mobile.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/search.js"></script>
     <script src="/js/app.js"></script>
     {% block js %}{% endblock %}
   </body>

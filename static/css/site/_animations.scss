@@ -8,7 +8,7 @@
   opacity: 0;
   transform: scale(.8);
 
-  @for $i from 1 to 12 {
+  @for $i from 1 to 30 {
     &:nth-child(#{$i}) {
       transition-delay: $i * 150ms;
     }
@@ -25,7 +25,7 @@
   transform: scale(1) translate3d(0, 0, 0);
 }
 
-.header {
+.home .header {
   animation: header-anim .6s both .4s;
 }
 

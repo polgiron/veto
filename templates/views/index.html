@@ -3,6 +3,8 @@
 {% import "mixins/fiche.html" as Fiche %}
 {% import "mixins/member.html" as Member %}
 
+{% block bodyClass %}home{% endblock %}
+
 {% block content %}
   <section class="hero">
     <img class="hero__bg" src="/images/dog-6.jpg">
@@ -13,13 +15,19 @@
           <h2 class="heading-2">Clinique veterinaire</h2>
           <ul class="small-list">
             <li class="small-list__entry">
-              <i class="material-icons">place</i> 54 rue des lilas PARIS 20e
+              <!-- <i class="material-icons">place</i> -->
+              <i class="fa fa-fw fa-map-marker"></i>
+              54 rue des lilas PARIS 20e
             </li>
             <li class="small-list__entry">
-              <i class="material-icons">train</i> <img src="/images/ligne-3.png">
+              <!-- <i class="material-icons">train</i> -->
+              <i class="fa fa-fw fa-subway"></i>
+              <img src="/images/ligne-3.png">
             </li>
             <li class="small-list__entry">
-              <i class="material-icons">phone</i> <a href="tel:07123123123">07123123123</a>
+              <!-- <i class="material-icons">phone</i> -->
+              <i class="fa fa-fw fa-phone"></i>
+              <a href="tel:07123123123">07123123123</a>
             </li>
           </ul>
           <a class="hero__scroll-last">
@@ -36,7 +44,8 @@
       </div>
       <a class="hero__scroll-first">
         <div class="circle">
-          <i class="material-icons">keyboard_arrow_down</i>
+          <!-- <i class="material-icons">keyboard_arrow_down</i> -->
+          <i class="fa fa-fw fa-chevron-down"></i>
         </div>
       </a>
     </div>
@@ -119,13 +128,19 @@
         <hr>
         <ul class="small-list">
           <li class="small-list__entry">
-            <i class="material-icons">place</i> 54 rue des lilas PARIS 20e
+            <!-- <i class="material-icons">place</i> -->
+            <i class="fa fa-fw fa-map-marker"></i>
+            54 rue des lilas PARIS 20e
           </li>
           <li class="small-list__entry">
-            <i class="material-icons">train</i> <img src="/images/ligne-3.png">
+            <!-- <i class="material-icons">train</i> -->
+            <i class="fa fa-fw fa-subway"></i>
+            <img src="/images/ligne-3.png">
           </li>
           <li class="small-list__entry">
-            <i class="material-icons">phone</i> <a href="tel:07123123123">07123123123</a>
+            <!-- <i class="material-icons">phone</i> -->
+            <i class="fa fa-fw fa-phone"></i>
+            <a href="tel:07123123123">07123123123</a>
           </li>
         </ul>
         <a class="button" href="https://www.google.co.uk/maps/dir//54+Rue+Stendhal,+75020+Paris,+France/@48.8627742,2.3983237,17z/data=!4m16!1m7!3m6!1s0x47e66d8f9d28fe45:0x4240f4dea8eef73a!2s54+Rue+Stendhal,+75020+Paris,+France!3b1!8m2!3d48.8627742!4d2.4005124!4m7!1m0!1m5!1m1!1s0x47e66d8f9d28fe45:0x4240f4dea8eef73a!2m2!1d2.4005124!2d48.8627742" target="_blank">Voir le plan</a>
