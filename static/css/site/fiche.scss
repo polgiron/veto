@@ -1,12 +1,26 @@
 .fiche-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 2 * #{$header-height});
+}
+
+.fiche-catalogue {
   display: grid;
   grid-template-columns: 16rem calc(100% - 16rem);
   padding: 0;
-  min-height: calc(100vh - #{$header-height});
+  // min-height: calc(100vh - #{$header-height});
+  border: 1px solid $color-main-lighter;
+  border-bottom: 0;
+  max-width: 1000px;
+  margin: auto;
+  flex: 1;
 
   @media (max-width: $screen-xs-max) {
     display: block;
     background: $color-white-2;
+    margin: 0 -2rem;
+    border-right: 0;
+    border-left: 0;
   }
 }
 
@@ -147,7 +161,7 @@
 
   .fiche {
     padding: $padding-section;
-    max-width: 850px;
+    // max-width: 850px;
 
     @media (max-width: $screen-sm-max) {
       padding: 2rem;

@@ -1,21 +1,14 @@
 {% extends "layouts/base.html" %}
 
-{% import "mixins/member.html" as Member %}
-
-{% block bodyClass %}team{% endblock %}
+{% block bodyClass %}clinique{% endblock %}
 
 {% block content %}
-  <div class="team-wrapper content-wrapper animate-section">
+  <div class="clinique-wrapper content-wrapper animate-section">
     <div class="page__title">
-      <h1 class="animate-element animate-element--translate">Notre tendre équipe</h1>
+      <h1 class="animate-element animate-element--translate">La clinique</h1>
       <p class="introduction animate-element animate-element--translate">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       </p>
     </div>
-    <ul class="section__list">
-      {% for member in members %}
-        {{ Member.member(member.name, member._.image, member.title) }}
-      {% endfor %}
-    </ul>
   </div>
 {% endblock %}

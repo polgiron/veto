@@ -22,6 +22,9 @@ exports = module.exports = function(req, res) {
 
       if (req.params.fiche) {
         locals.activeFiche = req.params.fiche;
+      } else {
+        locals.fiche = locals.fiches[0];
+        locals.activeFiche = locals.fiches[0].slug;
       }
 
       next(err);

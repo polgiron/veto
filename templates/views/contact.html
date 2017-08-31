@@ -1,50 +1,54 @@
 {% extends "layouts/base.html" %}
 
 {% block content %}
-  <div class="contact-wrapper content-wrapper">
-    <h1>Contactez nous</h1>
-    <p class="introduction">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    </p>
-    {% if enquirySubmitted %}
-      <h2>Merci pour votre message, nous vous répondrons dans les plus bref délais.</h2>
-    {% else %}
-      {{ FM.flashMessages(messages) }}
-      <form method="post">
-        <input type="hidden" name="action" value="contact">
+  <div class="contact-wrapper content-wrapper animate-section">
+    <div class="page__title">
+      <h1 class="animate-element animate-element--translate">Contactez nous</h1>
+      <p class="introduction animate-element animate-element--translate">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+      {% if enquirySubmitted %}
+        <h2 class="animate-element animate-element--translate">Merci pour votre message, nous vous répondrons dans les plus bref délais.</h2>
+      {% else %}
+        <div class="animate-element animate-element--translate">
+          {{ FM.flashMessages(messages) }}
+        </div>
+        <form method="post" class="animate-element animate-element--translate">
+          <input type="hidden" name="action" value="contact">
 
-        {% set class = ( "input-invalid" if validationErrors.name else "" ) %}
-        <div class="input-single {{ class }}">
-          <label>Prénom</label>
-          <input type="text" name="name.full" value="{{ formData["name.full"] }}" class="form-control">
-        </div>
-        {% set class = ( "input-invalid" if validationErrors.email else "" ) %}
-        <div class="input-single {{ class }}">
-          <label>Email</label>
-          <input type="email" name="email" value="{{ formData.email }}" class="form-control">
-        </div>
-        <div class="input-single">
-          <label>Numéro de téléphone</label>
-          <input type="text" name="phone" value="{{ formData.phone }}" placeholder="(optionel)" class="form-control">
-        </div>
-        {% set class = ( "input-invalid" if validationErrors.enquiryType else "" ) %}
-        <div class="input-single {{ class }}">
-          <label>Pour quelle raison nous contactez vous?</label>
-          <select name="enquiryType" class="form-control">
-            <option value="">(choisissez une réponse)</option>
-            {% for type in enquiryTypes %}
-              {% set selected = ( 'selected="selected"' if formData.enquiryType == type.value else "" ) %}
-              <option value="{{type.value}}" {{ selected }}>{{ type.label }}</option>
-            {% endfor %}
-          </select>
-        </div>
-        {% set class = ( "input-invalid" if validationErrors.message else "" ) %}
-        <div class="input-single {{ class }}">
-          <label>Message</label>
-          <textarea name="message" placeholder="Votre message..." rows="4">{{ formData.message }}</textarea>
-        </div>
-        <button type="submit" class="button-block">Envoyer</button>
-      </form>
+          {% set class = ( "input-invalid" if validationErrors.name else "" ) %}
+          <div class="input-single {{ class }}">
+            <label>Prénom</label>
+            <input type="text" name="name.full" value="{{ formData["name.full"] }}" class="form-control">
+          </div>
+          {% set class = ( "input-invalid" if validationErrors.email else "" ) %}
+          <div class="input-single {{ class }}">
+            <label>Email</label>
+            <input type="email" name="email" value="{{ formData.email }}" class="form-control">
+          </div>
+          <div class="input-single">
+            <label>Numéro de téléphone</label>
+            <input type="text" name="phone" value="{{ formData.phone }}" placeholder="(optionel)" class="form-control">
+          </div>
+          {% set class = ( "input-invalid" if validationErrors.enquiryType else "" ) %}
+          <div class="input-single {{ class }}">
+            <label>Pour quelle raison nous contactez vous?</label>
+            <select name="enquiryType" class="form-control">
+              <option value="">(choisissez une réponse)</option>
+              {% for type in enquiryTypes %}
+                {% set selected = ( 'selected="selected"' if formData.enquiryType == type.value else "" ) %}
+                <option value="{{type.value}}" {{ selected }}>{{ type.label }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          {% set class = ( "input-invalid" if validationErrors.message else "" ) %}
+          <div class="input-single {{ class }}">
+            <label>Message</label>
+            <textarea name="message" placeholder="Votre message..." rows="4">{{ formData.message }}</textarea>
+          </div>
+          <button type="submit" class="button-block">Envoyer</button>
+        </form>
+      </div>
     </div>
   {% endif %}
 {% endblock %}

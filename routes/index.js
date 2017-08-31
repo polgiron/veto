@@ -18,5 +18,6 @@ exports = module.exports = function (app) {
   app.get('/fiches', routes.views.fiche);
   app.get('/fiches/:fiche', routes.views.fiche);
   app.get('/team', routes.views.team);
+  app.get('/clinique', routes.views.clinique);
   app.all('/contact', routes.views.contact);
 };

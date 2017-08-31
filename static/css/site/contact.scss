@@ -1,16 +1,4 @@
 .contact-wrapper {
-  max-width: 600px;
-  margin: auto;
-  padding: $padding-section;
-
-  @media (max-width: $screen-sm-max) {
-    padding: 2rem;
-  }
-
-  h1 {
-    margin-bottom: 2rem;
-  }
-
   h2 {
     text-align: center;
     text-transform: none;
