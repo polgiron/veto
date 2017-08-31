@@ -17,6 +17,12 @@ exports = module.exports = function (req, res) {
     q.exec(function(err, results) {
       if (results) {
         locals.ficheHighlight = results;
+
+        // locals.ficheHighlight.forEach(function(fiche) {
+        //   if (fiche.name.length >= 30) {
+        //     fiche.name = fiche.name.substring(0, 30) + '...';
+        //   }
+        // });
       }
       next(err);
     });
