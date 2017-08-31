@@ -273,6 +273,16 @@
       }
     }
 
+    &:active {
+      .arrow circle {
+        fill: $color-main;
+      }
+
+      .arrow path {
+        stroke: $color-white;
+      }
+    }
+
     .description {
       margin: 0;
       color: $color-gray-2;
