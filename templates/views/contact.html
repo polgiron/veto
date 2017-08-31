@@ -31,7 +31,7 @@
         <div class="input-single {{ class }}">
           <label>Pour quelle raison nous contactez vous?</label>
           <select name="enquiryType" class="form-control">
-            <option value="">(select one)</option>
+            <option value="">(choisissez une réponse)</option>
             {% for type in enquiryTypes %}
               {% set selected = ( 'selected="selected"' if formData.enquiryType == type.value else "" ) %}
               <option value="{{type.value}}" {{ selected }}>{{ type.label }}</option>

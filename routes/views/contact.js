@@ -18,12 +18,13 @@ exports = module.exports = function(req, res) {
     var updater = newEnquiry.getUpdateHandler(req);
 
     updater.process(req.body, {
-      flashErrors: true,
+      // flashErrors: true,
       fields: 'name, email, phone, enquiryType, message',
-      errorMessage: 'There was a problem submitting your enquiry:',
+      // errorMessage: 'There was a problem submitting your enquiry:',
     }, function(err) {
       if (err) {
         locals.validationErrors = err.detail;
+        req.flash('error', 'Veuillez remplir tous les champs obligatoires.');
       } else {
         locals.enquirySubmitted = true;
       }
