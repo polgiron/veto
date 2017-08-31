@@ -7,8 +7,11 @@ exports = module.exports = function(req, res) {
 
   locals.section = 'fiches';
 
+  // Fiches for the menu
   view.on('init', function(next) {
-    var q = Fiche.model.find();
+    var q = Fiche.model.find({
+      state: 'published'
+    }).sort('sortOrder');
 
     q.exec(function(err, fiches) {
       if (fiches) {
@@ -25,6 +28,7 @@ exports = module.exports = function(req, res) {
     });
   });
 
+  // Fiche
   if (req.params.fiche) {
     view.on('init', function(next) {
       var q = Fiche.model.findOne({

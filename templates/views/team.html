@@ -11,22 +11,9 @@
         <h1 class="heading-1">Notre tendre équipe</h1>
       </div>
       <ul class="section__list">
-        {{ Member.member() }}
-        {{ Member.member() }}
-        {{ Member.member() }}
-        {{ Member.member() }}
-        {{ Member.member() }}
-        {{ Member.member() }}
-        {{ Member.member() }}
-        {{ Member.member() }}
-        {{ Member.member() }}
-        {{ Member.member() }}
-        {{ Member.member() }}
-        {{ Member.member() }}
-        {{ Member.member() }}
-        {{ Member.member() }}
-        {{ Member.member() }}
-        {{ Member.member() }}
+        {% for member in members %}
+          {{ Member.member(member.name, member._.image, member.title) }}
+        {% endfor %}
       </ul>
     </section>
   </div>

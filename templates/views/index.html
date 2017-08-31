@@ -96,9 +96,9 @@
       <h1 class="heading-1">Fiches chirurgicales</h1>
     </div>
     <ul class="section__list">
-      {{ Fiche.fiche() }}
-      {{ Fiche.fiche() }}
-      {{ Fiche.fiche() }}
+      {% for fiche in ficheHighlight %}
+        {{ Fiche.fiche(fiche.slug, fiche.name, fiche._.publishedDate.format("DD/MM/YYYY"), fiche.categories, fiche.brief|safe) }}
+      {% endfor %}
     </ul>
     <div class="button-wrapper">
       <a class="button" href="/fiches">Voir la totalité des fiches</a>
@@ -109,11 +109,9 @@
       <h1 class="heading-1">Notre tendre équipe</h1>
     </div>
     <ul class="section__list">
-      {{ Member.member() }}
-      {{ Member.member() }}
-      {{ Member.member() }}
-      {{ Member.member() }}
-      {{ Member.member() }}
+      {% for member in memberHighlight %}
+        {{ Member.member(member.name, member._.image, member.title) }}
+      {% endfor %}
     </ul>
     <div class="button-wrapper">
       <a class="button" href="/team">Voir l'équipe au complet</a>

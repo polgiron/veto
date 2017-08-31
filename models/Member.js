@@ -2,23 +2,21 @@ var keystone = require('keystone');
 var Types = keystone.Field.Types;
 
 /**
- * Fiche Model
+ * Member Model
  * =============
  */
 
-var Fiche = new keystone.List('Fiche', {
+var Member = new keystone.List('Member', {
   autokey: { from: 'name', path: 'slug', unique: true },
   sortable: true
 });
 
-Fiche.add({
+Member.add({
   name: { type: String, required: true },
   state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
-  publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
-  brief: { type: Types.Textarea, height: 200 },
-  content: { type: Types.Html, wysiwyg: true, height: 400 },
-  categories: { type: Types.Relationship, ref: 'FicheCategory', many: true },
+  title: { type: String },
+  image: { type: Types.CloudinaryImage, autoCleanup: true },
   isHighlight: { type: Boolean, label: 'Sur la page d\'accueil?', index: true },
 });
 
-Fiche.register();
+Member.register();

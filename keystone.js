@@ -47,6 +47,7 @@ keystone.set('routes', require('./routes'));
 
 keystone.set('nav', {
   fiches: ['fiches', 'fiche-categories'],
+  members: 'members',
   enquiries: 'enquiries',
   users: 'users',
 });

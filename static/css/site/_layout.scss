@@ -252,6 +252,7 @@
   }
 
   .fiche--inner {
+    display: block;
     background: $color-white;
     overflow: hidden;
     position: relative;
@@ -264,6 +265,8 @@
     &:hover {
       box-shadow: -4px 8px 15px rgba(0, 0, 0, .1);
       transform: translate3d(5px, -5px, 0);
+      text-decoration: none;
+      color: inherit;
 
       .arrow circle {
         stroke-dashoffset: 0;
@@ -369,6 +372,11 @@
       path {
         fill: $color-white !important;
       }
+    }
+
+    img {
+      position: relative;
+      z-index: 2;
     }
   }
 
