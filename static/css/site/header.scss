@@ -37,6 +37,10 @@
     margin: auto;
   }
 
+  &:hover {
+    text-decoration: none;
+  }
+
   img {
     padding: .1rem 0;
     height: $header-height;

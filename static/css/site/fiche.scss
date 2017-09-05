@@ -216,11 +216,13 @@
 .fiche__cta-bottom {
   display: flex;
   align-items: center;
-  float: right;
+  // float: right;
+  margin-top: 3rem;
 
   span {
     margin-right: .5em;
     opacity: .7;
+    margin-left: auto;
   }
 }
 
