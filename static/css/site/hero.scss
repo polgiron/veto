@@ -1,8 +1,8 @@
 .hero {
-  height: 100vh;
-  max-height: 700px;
   position: relative;
   overflow: hidden;
+  // max-height: 700px;
+  height: 790px;
 
   @media (max-width: $screen-xs-max) {
     height: auto;
