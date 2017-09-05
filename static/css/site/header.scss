@@ -43,13 +43,15 @@
   }
 
   span {
-    font-size: .8rem;
+    font-size: 1.3rem;
     display: block;
-    width: 50px;
+    width: 70px;
     align-self: flex-end;
     position: relative;
-    left: -.7rem;
-    bottom: .5rem;
+    left: -1rem;
+    bottom: .4rem;
+    color: $color-main;
+    letter-spacing: -1px;
   }
 }
 
@@ -182,7 +184,8 @@
   }
 
   .phone {
-    font-size: 1rem;
+    font-size: 1.2rem;
     letter-spacing: -1px;
+    // font-family: $font-family-mono;
   }
 }

@@ -2,6 +2,12 @@
   display: flex;
   flex-direction: column;
   min-height: calc(100vh - 2 * #{$header-height});
+
+  .alert-danger {
+    @media (min-width: $screen-md-min) {
+      margin-bottom: -2rem;
+    }
+  }
 }
 
 .fiche-catalogue {
@@ -207,8 +213,15 @@
   }
 }
 
-.alert-danger {
-  margin-bottom: 2rem;
+.fiche__cta-bottom {
+  display: flex;
+  align-items: center;
+  float: right;
+
+  span {
+    margin-right: .5em;
+    opacity: .7;
+  }
 }
 
 .no-results {

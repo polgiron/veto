@@ -7,8 +7,8 @@
       <p class="introduction animate-element animate-element--translate">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       </p>
+      {{ FM.flashMessages(messages) }}
     </div>
-    {{ FM.flashMessages(messages) }}
     <div class="fiche-catalogue animate-element animate-element--translate">
       <nav class="fiche-nav">
         <div class="search">
@@ -53,6 +53,10 @@
             <hr>
             <div class="fiche__content">
               {{ fiche.content|safe }}
+            </div>
+            <div class="fiche__cta-bottom">
+              <span>N'hésitez pas à</span>
+              <a href="/contact" class="button">nous contacter</a>
             </div>
           {% endif %}
         </div>

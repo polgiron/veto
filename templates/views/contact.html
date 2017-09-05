@@ -10,10 +10,16 @@
       {% if enquirySubmitted %}
         <h2 class="animate-element animate-element--translate">Merci pour votre message, nous vous répondrons dans les plus bref délais.</h2>
       {% else %}
-        <div class="animate-element animate-element--translate">
-          {{ FM.flashMessages(messages) }}
+    </div>
+    <div class="contact-page__body animate-element animate-element--translate">
+      <div class="left">
+        <div class="inner">
+          {% include "layouts/contact-list.html" %}
         </div>
-        <form method="post" class="animate-element animate-element--translate">
+      </div>
+      <div class="right">
+        {{ FM.flashMessages(messages) }}
+        <form method="post">
           <input type="hidden" name="action" value="contact">
 
           {% set class = ( "input-invalid" if validationErrors.name else "" ) %}
@@ -28,13 +34,12 @@
           </div>
           <div class="input-single">
             <label>Numéro de téléphone</label>
-            <input type="text" name="phone" value="{{ formData.phone }}" placeholder="(optionel)" class="form-control">
+            <input type="text" name="phone" value="{{ formData.phone }}" placeholder="(facultatif)" class="form-control">
           </div>
           {% set class = ( "input-invalid" if validationErrors.enquiryType else "" ) %}
           <div class="input-single {{ class }}">
-            <label>Pour quelle raison nous contactez vous?</label>
+            <label>Est ce une urgence?</label>
             <select name="enquiryType" class="form-control">
-              <option value="">(choisissez une réponse)</option>
               {% for type in enquiryTypes %}
                 {% set selected = ( 'selected="selected"' if formData.enquiryType == type.value else "" ) %}
                 <option value="{{type.value}}" {{ selected }}>{{ type.label }}</option>

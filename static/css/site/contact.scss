@@ -5,10 +5,12 @@
   }
 
   .introduction {
-    margin-bottom: 3rem;
-
     @media (max-width: $screen-sm-max) {
       margin-bottom: 1.5rem;
+    }
+
+    @media (max-width: $screen-xs-max) {
+      margin-bottom: 0;
     }
   }
 
@@ -22,6 +24,30 @@
 
     @media (max-width: $screen-sm-max) {
       margin-bottom: 1.5rem;
+    }
+  }
+}
+
+.contact-page__body {
+  display: grid;
+  grid-template-columns: .8fr 1fr;
+  grid-gap: 4rem;
+  max-width: 900px;
+  margin: auto;
+  margin-bottom: 2rem;
+
+  @media (max-width: $screen-xs-max) {
+    display: block;
+  }
+
+  .left .inner {
+    border: 1px solid $color-main-lighter;
+    background: $color-white-2;
+    padding: 1rem;
+    border-radius: 3px;
+
+    @media (max-width: $screen-xs-max) {
+      margin-bottom: 2rem;
     }
   }
 }

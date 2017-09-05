@@ -37,7 +37,8 @@
   top: calc(50% + 56px / 2);
   transform: translateY(-50%);
   left: 2rem;
-  width: 500px;
+  // width: 500px;
+  width: 550px;
   border-radius: 3px;
   overflow: hidden;
 
@@ -57,6 +58,7 @@
   .top {
     background: $color-white;
     position: relative;
+    padding-bottom: 5rem;
 
     @media (max-width: $screen-xs-max) {
       padding-bottom: 0;
@@ -68,11 +70,11 @@
   }
 
   .small-list__entry {
-    font-size: 1.2rem;
+    // font-size: 1.2rem;
 
-    @media (max-width: $screen-xs-max) {
-      font-size: 1rem;
-    }
+    // @media (max-width: $screen-xs-max) {
+      // font-size: 1rem;
+    // }
   }
 
   .heading-1 {
