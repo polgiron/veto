@@ -221,3 +221,29 @@
     display: none;
   }
 }
+
+.contact-widget {
+  position: sticky;
+  bottom: 1rem;
+  right: 0;
+  z-index: 20;
+  text-align: right;
+  display: flex;
+
+  .inner {
+    background: $color-white;
+    padding: 1rem;
+    border: 1px solid $color-main;
+    width: auto;
+    margin-left: auto;
+    border-radius: 4px;
+  }
+
+  span {
+    margin-right: .6rem;
+
+    @media (max-width: $screen-xs-max) {
+      display: none;
+    }
+  }
+}

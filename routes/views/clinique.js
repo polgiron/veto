@@ -7,6 +7,21 @@ exports = module.exports = function (req, res) {
   locals.section = 'clinique';
 
   var Page = keystone.list('Page');
+
+  view.on('init', function(next) {
+    var q = Page.model.findOne({
+      type: 'home'
+    });
+
+    q.exec(function(err, results) {
+      if (results) {
+        locals.phone = results.phone;
+        locals.email = results.email;
+      }
+      next(err);
+    });
+  });
+
   view.on('init', function(next) {
     var q = Page.model.findOne({
       type: 'clinique'

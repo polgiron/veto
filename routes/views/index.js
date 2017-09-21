@@ -16,6 +16,8 @@ exports = module.exports = function (req, res) {
     q.exec(function(err, results) {
       if (results) {
         locals.data = results;
+        locals.phone = results.phone;
+        locals.email = results.email;
       }
       next(err);
     });
