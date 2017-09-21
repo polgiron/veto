@@ -7,6 +7,20 @@ exports = module.exports = function(req, res) {
 
   locals.section = 'fiches';
 
+  var Page = keystone.list('Page');
+  view.on('init', function(next) {
+    var q = Page.model.findOne({
+      type: 'fiche'
+    });
+
+    q.exec(function(err, results) {
+      if (results) {
+        locals.data = results;
+      }
+      next(err);
+    });
+  });
+
   // Fiches for the menu
   view.on('init', function(next) {
     var q = Fiche.model.find({

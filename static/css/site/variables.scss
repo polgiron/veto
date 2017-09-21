@@ -13,14 +13,12 @@ $color-gray: #6f6c69;
 $color-gray-2: #8c8987;
 $color-gray-3: #f1f1f1;
 
-$content-max-width: 1600px;
+// $content-max-width: 1600px;
+$content-max-width: 1400px;
 $header-height: 56px;
 $padding-section: 4rem;
 
 $font-family: 'Open Sans', sans-serif;
-// $font-family-mono: 'Droid Sans Mono', monospace;;
-// $font-family: 'Lato', sans-serif;
-// $font-family: 'Source Sans Pro', sans-serif;
 
 $screen-sm-min: 768px;
 $screen-xs-max: ($screen-sm-min - 1);

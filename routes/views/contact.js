@@ -12,6 +12,20 @@ exports = module.exports = function(req, res) {
   locals.validationErrors = {};
   locals.enquirySubmitted = false;
 
+  var Page = keystone.list('Page');
+  view.on('init', function(next) {
+    var q = Page.model.findOne({
+      type: 'contact'
+    });
+
+    q.exec(function(err, results) {
+      if (results) {
+        locals.data = results;
+      }
+      next(err);
+    });
+  });
+
   // On POST requests, add the Enquiry item to the database
   view.on('post', {action: 'contact'}, function(next) {
     var newEnquiry = new Enquiry.model();

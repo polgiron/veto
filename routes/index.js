@@ -20,4 +20,5 @@ exports = module.exports = function (app) {
   app.get('/team', routes.views.team);
   app.get('/clinique', routes.views.clinique);
   app.all('/contact', routes.views.contact);
+  app.get('/david.znaty', routes.views.perso);
 };

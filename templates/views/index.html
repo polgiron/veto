@@ -7,7 +7,7 @@
 
 {% block content %}
   <section class="hero">
-    <img class="hero__bg" src="/images/dog-6.jpg">
+    <img class="hero__bg" src="{{data._.homeHeroImage.fit(1400, 1000)}}" alt="">
     <div class="content-wrapper">
       <div class="hero__content">
         <div class="top">
@@ -22,7 +22,7 @@
         <div class="bottom">
           <h3 class="heading-3">Sur rendez-vous:</h3>
           <div class="rdv-wrapper">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore architecto illo maxime doloribus voluptas...
+            {{data.homeRdvText}}
           </div>
         </div>
       </div>
@@ -42,35 +42,21 @@
   <section class="section--half">
     <div class="section--half__text">
       <div class="inner">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-          <br>
-          <br>
-          <a href="#">This is a link...</a> <br>
-          <a href="#">This is a link...</a> <br>
-          <a href="#">This is a link...</a>
-        </p>
+        {{data.homeText1|safe}}
       </div>
     </div>
     <div class="section--half__image">
-      <img src="/images/cat.jpg">
+      <img src="{{data._.homeImage1.fit(1000, 1000)}}">
     </div>
   </section>
   <section class="section--half animate-section">
     <div class="section--half__text">
       <div class="inner">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-          <br>
-          <br>
-          <a href="#">This is a link...</a> <br>
-          <a href="#">This is a link...</a> <br>
-          <a href="#">This is a link...</a>
-        </p>
+        {{data.homeText2|safe}}
       </div>
     </div>
     <div class="section--half__image">
-      <img src="/images/dog-2.jpg">
+      <img src="{{data._.homeImage2.fit(1000, 1000)}}">
     </div>
   </section>
   <section class="section section--fiches animate-section">

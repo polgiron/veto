@@ -1,4 +1,7 @@
-// .main-wrapper,
+body.menu-open {
+  overflow: hidden;
+}
+
 .content-wrapper {
   max-width: $content-max-width;
   margin: auto;
@@ -576,6 +579,7 @@
   padding: $padding-section;
   max-width: 600px;
   margin: auto;
+  text-align: center;
 
   @media (max-width: $screen-sm-max) {
     padding: 2rem 0;
@@ -588,5 +592,41 @@
   p {
     text-align: center;
     margin: 0;
+  }
+}
+
+.page__content {
+  padding: 0 3rem;
+
+  @media (max-width: $screen-sm-max) {
+    padding: 0;
+  }
+}
+
+.html-content {
+  h1 {
+    text-align: left;
+
+    @media (max-width: $screen-xs-max) {
+      font-size: 1.8rem;
+    }
+  }
+
+  h2 {
+    text-transform: none;
+    margin-top: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+    margin-top: 1.5rem;
+  }
+
+  p {
+    line-height: 1.7;
+  }
+
+  img {
+    width: 100%;
   }
 }

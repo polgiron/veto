@@ -5,10 +5,13 @@
 {% block content %}
   <div class="clinique-wrapper content-wrapper animate-section">
     <div class="page__title">
-      <h1 class="animate-element animate-element--translate">La clinique</h1>
-      <p class="introduction animate-element animate-element--translate">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </p>
+      <h1 class="animate-element animate-element--translate">{{data.pageHeader}}</h1>
+      <div class="introduction animate-element animate-element--translate">
+        {{data.pageIntro}}
+      </div>
+    </div>
+    <div class="page__content html-content animate-element animate-element--translate">
+      {{data.pageContent|safe}}
     </div>
   </div>
 {% endblock %}

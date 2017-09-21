@@ -1,0 +1,25 @@
+.perso-wrapper {
+  display: flex;
+  max-width: 1000px;
+  margin: auto;
+  padding: 4rem 3rem;
+}
+
+.perso__image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: gray;
+  margin-right: 3rem;
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.perso__text {
+  margin-top: 2rem;
+}

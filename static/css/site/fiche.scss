@@ -187,32 +187,6 @@
   .tag-list__entry {
     font-size: .9rem;
   }
-
-  h1 {
-    text-align: left;
-
-    @media (max-width: $screen-xs-max) {
-      font-size: 1.8rem;
-    }
-  }
-
-  h2 {
-    text-transform: none;
-    margin-top: 1.5rem;
-  }
-
-  h3 {
-    font-size: 1.3rem;
-    margin-top: 1.5rem;
-  }
-
-  p {
-    line-height: 1.7;
-  }
-
-  img {
-    width: 100%;
-  }
 }
 
 .fiche__cta-bottom {

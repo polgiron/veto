@@ -6,5 +6,19 @@ exports = module.exports = function (req, res) {
 
   locals.section = 'clinique';
 
+  var Page = keystone.list('Page');
+  view.on('init', function(next) {
+    var q = Page.model.findOne({
+      type: 'clinique'
+    });
+
+    q.exec(function(err, results) {
+      if (results) {
+        locals.data = results;
+      }
+      next(err);
+    });
+  });
+
   view.render('clinique');
 };
