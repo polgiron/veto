@@ -33,7 +33,8 @@ keystone.init({
   // 'wysiwyg additional buttons': 'styleselect, uploadimage',
   'wysiwyg additional buttons': 'styleselect, bold italic, alignleft aligncenter alignright alignjustify, bullist numlist outdent indent, link uploadimage, removeformat',
 
-  'admin path': 'cliniqueadmin'
+  'admin path': 'cliniqueadmin',
+  'signin logo': ['/images/logo.svg', 200, 200],
 });
 
 keystone.import('models');
