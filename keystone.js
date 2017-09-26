@@ -32,6 +32,8 @@ keystone.init({
   'wysiwyg override toolbar': true,
   // 'wysiwyg additional buttons': 'styleselect, uploadimage',
   'wysiwyg additional buttons': 'styleselect, bold italic, alignleft aligncenter alignright alignjustify, bullist numlist outdent indent, link uploadimage, removeformat',
+
+  'admin path': 'cliniqueadmin'
 });
 
 keystone.import('models');

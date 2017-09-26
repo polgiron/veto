@@ -21,4 +21,6 @@ exports = module.exports = function (app) {
   app.get('/clinique', routes.views.clinique);
   app.all('/contact', routes.views.contact);
   app.get('/david.znaty', routes.views.perso);
+
+  // app.get('/admin', routes.views.index);
 };
