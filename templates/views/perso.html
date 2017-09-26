@@ -4,10 +4,10 @@
 
 {% block content %}
   <div class="perso-wrapper content-wrapper animate-section">
-    <div class="perso__image">
+    <div class="perso__image animate-element animate-element--translate">
       <img src="{{data._.pageImage.fit(250, 250)}}" alt="">
     </div>
-    <div class="perso__text">
+    <div class="perso__text animate-element animate-element--translate">
       {{data.pageContent|safe}}
     </div>
   </div>

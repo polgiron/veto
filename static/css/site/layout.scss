@@ -607,6 +607,8 @@ body.menu-open {
 .html-content {
   h1 {
     text-align: left;
+    margin-bottom: 1rem;
+    line-height: 1.3;
 
     @media (max-width: $screen-xs-max) {
       font-size: 1.8rem;
