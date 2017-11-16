@@ -19,12 +19,6 @@
             {% include "svg/icon-arrow-circle.svg" %}
           </a>
         </div>
-        <div class="bottom">
-          <h3 class="heading-3">Sur rendez-vous:</h3>
-          <div class="rdv-wrapper">
-            {{data.homeRdvText}}
-          </div>
-        </div>
       </div>
       <a class="hero__scroll-first">
         <div class="circle">
@@ -64,7 +58,7 @@
       <div class="icon">
         {% include "svg/icon-health.svg" %}
       </div>
-      <h1 class="heading-1">Fiches chirurgicales</h1>
+      <h1 class="heading-1">Fiches médicales</h1>
     </div>
     <ul class="section__list">
       {% for fiche in ficheHighlight %}
@@ -77,7 +71,7 @@
   </section>
   <section class="section section--team animate-section">
     <div class="section__header">
-      <h1 class="heading-1">Notre tendre équipe</h1>
+      <h1 class="heading-1">Notre équipe</h1>
     </div>
     <ul class="section__list">
       {% for member in memberHighlight %}
