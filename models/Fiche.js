@@ -17,7 +17,7 @@ Fiche.add({
   publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
   brief: { type: Types.Textarea, height: 200 },
   content: { type: Types.Html, wysiwyg: true, height: 400 },
-  categories: { type: Types.Relationship, ref: 'FicheCategory', many: true },
+  category: { type: Types.Relationship, ref: 'FicheCategory' },
   isHighlight: { type: Boolean, label: 'Sur la page d\'accueil?', index: true },
 });
 

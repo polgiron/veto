@@ -1,18 +1,18 @@
-{% macro fiche(slug, name, date, categories, brief) %}
+{% macro fiche(slug, name, date, category, brief) %}
   <li class="fiche animate-element">
     <a class="fiche--inner" href="/fiches/{{slug}}">
       <div class="top">
         <h4 class="heading-4">{{name}}</h4>
       </div>
       <div class="bottom">
-        <p class="date">{{date}}</p>
-          {% if categories and categories.length %}
+        <div class="bottom__top">
+          <p class="date">{{date}}</p>
+          {% if category %}
             <ul class="tag-list">
-              {% for cat in categories %}
-                <li class="tag-list__entry">{{ cat.name }}</li>
-              {% endfor %}
+              <li class="tag-list__entry">{{ category.name }}</li>
             </ul>
           {% endif %}
+        </div>
         <hr>
         <p class="description">{{brief}}</p>
         <div class="arrow">

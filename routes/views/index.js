@@ -29,17 +29,11 @@ exports = module.exports = function (req, res) {
     var q = Fiche.model.find({
       isHighlight: true,
       state: 'published'
-    }).populate('categories').sort('sortOrder');
+    }).populate('category').sort('sortOrder');
 
     q.exec(function(err, results) {
       if (results) {
         locals.ficheHighlight = results;
-
-        // locals.ficheHighlight.forEach(function(fiche) {
-        //   if (fiche.name.length >= 30) {
-        //     fiche.name = fiche.name.substring(0, 30) + '...';
-        //   }
-        // });
       }
       next(err);
     });

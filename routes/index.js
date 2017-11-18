@@ -19,6 +19,7 @@ exports = module.exports = function (app) {
   app.get('/fiches/:fiche', routes.views.fiche);
   app.get('/team', routes.views.team);
   app.get('/clinique', routes.views.clinique);
+  app.get('/service', routes.views.service);
   app.all('/contact', routes.views.contact);
   app.get('/david.znaty', routes.views.perso);
 

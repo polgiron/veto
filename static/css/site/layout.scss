@@ -361,6 +361,10 @@ body.menu-open {
       }
     }
   }
+
+  // .bottom__top {
+  //   display: flex;
+  // }
 }
 
 .date {
@@ -633,4 +637,9 @@ body.menu-open {
   img {
     width: 100%;
   }
+}
+
+.clinique-wrapper,
+.service-wrapper {
+  padding-bottom: 4rem;
 }

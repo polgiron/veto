@@ -22,7 +22,6 @@
       </div>
       <a class="hero__scroll-first">
         <div class="circle">
-          <!-- <i class="material-icons">keyboard_arrow_down</i> -->
           <i class="fa fa-fw fa-chevron-down"></i>
         </div>
       </a>
@@ -43,7 +42,7 @@
       <img src="{{data._.homeImage1.fit(1000, 1000)}}">
     </div>
   </section>
-  <section class="section--half animate-section">
+  <section class="section--half">
     <div class="section--half__text">
       <div class="inner">
         {{data.homeText2|safe}}
@@ -62,7 +61,7 @@
     </div>
     <ul class="section__list">
       {% for fiche in ficheHighlight %}
-        {{ Fiche.fiche(fiche.slug, fiche.name, fiche._.publishedDate.format("DD/MM/YYYY"), fiche.categories, fiche.brief|safe) }}
+        {{ Fiche.fiche(fiche.slug, fiche.name, fiche._.publishedDate.format("DD/MM/YYYY"), fiche.category, fiche.brief|safe) }}
       {% endfor %}
     </ul>
     <div class="button-wrapper">

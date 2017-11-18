@@ -18,16 +18,25 @@
           </div>
           <i class="fa fa-fw fa-close" id="close-fiche-menu"></i>
         </div>
-        <ul class="fiche-nav__list">
-          {% for fiche in fiches %}
-            {% if fiche.publishedDate %}
-              <li class="fiche-nav__entry {{ 'is-active' if fiche.slug == activeFiche else '' }}">
-                <a href="/fiches/{{fiche.slug}}">{{fiche.name}}</a>
-              </li>
-            {% endif %}
+
+        <div class="fiche-nav__list accordion">
+          {% for category in data.categories %}
+            <h3 class="fiche-nav__entry category">
+              <i class="fa fa-fw fa-chevron-right"></i> {{category.name}}
+            </h3>
+            <ul class="fiche-nav__fiche-list category-list">
+              {% for fiche in data.fiches %}
+                {% if (fiche.publishedDate) and (fiche.category.id == category.id) %}
+                  <li class="fiche-nav__entry {{ 'is-active' if fiche.slug == activeFiche else '' }}">
+                    <a href="/fiches/{{fiche.slug}}">{{fiche.name}}</a>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
           {% endfor %}
           <li class="no-results">Aucune fiche trouvée</li>
-        </ul>
+        </div>
+
       </nav>
       <div class="fiche-nav__overlay"></div>
       <div class="fiche-main">
@@ -42,11 +51,9 @@
               {% if fiche.publishedDate %}
                 <p class="date">{{ fiche._.publishedDate.format("DD/MM/YYYY") }}</p>
               {% endif %}
-              {% if fiche.categories and fiche.categories.length %}
+              {% if fiche.category %}
                 <ul class="tag-list">
-                  {% for cat in fiche.categories %}
-                    <li class="tag-list__entry">{{ cat.name }}</li>
-                  {% endfor %}
+                  <li class="tag-list__entry">{{ fiche.category.name }}</li>
                 </ul>
               {% endif %}
             </div>
@@ -54,10 +61,6 @@
             <div class="fiche__content">
               {{ fiche.content|safe }}
             </div>
-            <!-- <div class="fiche__cta-bottom">
-              <span>N'hésitez pas à</span>
-              <a href="/contact" class="button">nous contacter</a>
-            </div> -->
             <div class="contact-widget">
               <div class="inner">
                 <span>N'hésitez pas à</span>

@@ -106,7 +106,6 @@
 
 .fiche-nav__entry {
   border-bottom: 1px solid rgba(0, 0, 0, .1);
-  position: relative;
   background: $color-white;
   position: relative;
   z-index: 2;
@@ -246,4 +245,32 @@
       display: none;
     }
   }
+}
+
+
+
+.category {
+  padding: 1em;
+  color: $color-main;
+  cursor: pointer;
+  text-transform: capitalize;
+  outline: 0;
+  font-size: 1rem;
+  margin: 0;
+
+  &.ui-state-active i {
+    transform: rotate(90deg);
+  }
+
+  i {
+    font-size: .8em;
+    transition: transform .2s;
+    margin-right: .2em;
+  }
+}
+
+.category-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }

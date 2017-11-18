@@ -1,7 +1,9 @@
 var keystone = require('keystone');
+var async = require('async');
 
 exports = module.exports = function(req, res) {
   var view = new keystone.View(req, res);
+  var FicheCategory = keystone.list('FicheCategory');
   var Fiche = keystone.list('Fiche');
   var locals = res.locals;
 
@@ -23,6 +25,8 @@ exports = module.exports = function(req, res) {
     });
   });
 
+  // Page intro
+
   view.on('init', function(next) {
     var q = Page.model.findOne({
       type: 'fiche'
@@ -37,14 +41,29 @@ exports = module.exports = function(req, res) {
   });
 
   // Fiches for the menu
+
+  view.on('init', function(next) {
+    var q = FicheCategory.model.find().sort('sortOrder');
+
+    q.exec(function(err, results) {
+      if (err || !results.length) {
+        return next(err);
+      }
+
+      locals.data.categories = results;
+
+      next(err);
+    });
+  });
+
   view.on('init', function(next) {
     var q = Fiche.model.find({
       state: 'published'
-    }).sort('sortOrder');
+    }).populate('category').sort('sortOrder');
 
     q.exec(function(err, fiches) {
       if (fiches) {
-        locals.fiches = fiches;
+        locals.data.fiches = fiches;
       }
 
       locals.activeFiche = 'introduction';
@@ -52,8 +71,6 @@ exports = module.exports = function(req, res) {
       if (req.params.fiche) {
         locals.activeFiche = req.params.fiche;
       } else {
-        // locals.fiche = locals.fiches[0];
-        // locals.activeFiche = locals.fiches[0].slug;
         return res.redirect('/fiches/' + locals.fiches[0].slug);
       }
 
@@ -62,11 +79,12 @@ exports = module.exports = function(req, res) {
   });
 
   // Fiche
+
   if (req.params.fiche) {
     view.on('init', function(next) {
       var q = Fiche.model.findOne({
         slug: req.params.fiche
-      }).populate('categories');
+      }).populate('category');
 
       q.exec(function(err, fiche) {
         if (fiche) {
