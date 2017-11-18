@@ -304,15 +304,18 @@ body.menu-open {
   }
 
   .fiche--inner {
-    display: block;
     background: $color-white;
-    overflow: hidden;
     position: relative;
     padding: 1.5rem;
     border-radius: 3px;
     cursor: pointer;
     transition: all .3s;
     box-shadow: 0 4px 9px rgba(0, 0, 0, .1);
+
+    height: 400px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 
     &:hover {
       box-shadow: -4px 8px 15px rgba(0, 0, 0, .1);
@@ -335,15 +338,30 @@ body.menu-open {
       }
     }
 
+    .bottom {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
     .description {
       margin: 0;
       color: $color-gray-2;
       font-size: .9rem;
+
+      max-height: 170px;
+      overflow: hidden;
+      // text-overflow: ellipsis;
+
+      display: -webkit-box;
+      -webkit-line-clamp: 8;
+      -webkit-box-orient: vertical;
     }
 
     .arrow {
       display: flex;
-      margin-top: 1rem;
+      // margin-top: 1rem;
+      margin-top: auto;
 
       svg {
         margin-left: auto;
