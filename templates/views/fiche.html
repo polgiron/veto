@@ -53,12 +53,13 @@
               {% endif %}
               {% if fiche.category %}
                 <ul class="tag-list">
-                  <li class="tag-list__entry">{{ fiche.category.name }} - nombre de vues : {{fiche.views}}</li>
+                  <li class="tag-list__entry">{{ fiche.category.name }}</li>
                 </ul>
               {% endif %}
             </div>
             <hr>
             <div class="fiche__content">
+              <p>Consulté {{fiche.views}} fois.</p>
               {{ fiche.content|safe }}
             </div>
             <div class="contact-widget">
