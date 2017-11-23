@@ -88,15 +88,15 @@ exports = module.exports = function (req, res) {
 
 			q.exec(function (err, fiche) {
 				if (fiche) {
-					var q = Fiche.model.update({ _id: fiche._id }, { $inc: { views: 1 } });
+          locals.fiche = fiche;
+          var q = Fiche.model.update({ _id: fiche._id }, { $inc: { views: 1 } });
 					q.exec(function (err, result) {
 						if (err) throw err;
 						else {
 						  console.log('result', result);
-							locals.fiche = fiche;
 						}
 					});
-				} else {
+        } else {
 					req.flash('error', 'Cette fiche n\'existe pas.');
 					return res.redirect('/fiches');
 				}
