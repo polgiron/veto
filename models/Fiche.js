@@ -19,7 +19,7 @@ Fiche.add({
 	content: { type: Types.Html, wysiwyg: true, height: 400 },
 	category: { type: Types.Relationship, ref: 'FicheCategory' },
 	isHighlight: { type: Boolean, label: 'Sur la page d\'accueil?', index: true },
-	view: { type: Number, default: 0 },
+	views: { type: Number, default: 0 },
 });
 
 Fiche.register();
