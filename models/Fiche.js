@@ -8,7 +8,7 @@ var Types = keystone.Field.Types;
 
 var Fiche = new keystone.List('Fiche', {
   autokey: { from: 'name', path: 'slug', unique: true },
-  sortable: true
+  sortable: true,
 });
 
 Fiche.add({
@@ -19,6 +19,7 @@ Fiche.add({
   content: { type: Types.Html, wysiwyg: true, height: 400 },
   category: { type: Types.Relationship, ref: 'FicheCategory' },
   isHighlight: { type: Boolean, label: 'Sur la page d\'accueil?', index: true },
+  views: { type: Number, default: 0 },
 });
 
 Fiche.register();

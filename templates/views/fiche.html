@@ -28,7 +28,10 @@
               {% for fiche in data.fiches %}
                 {% if (fiche.publishedDate) and (fiche.category.id == category.id) %}
                   <li class="fiche-nav__entry {{ 'is-active' if fiche.slug == activeFiche else '' }}">
-                    <a href="/fiches/{{fiche.slug}}">{{fiche.name}}</a>
+                    <a href="/fiches/{{fiche.slug}}">
+                      {{fiche.name}} <br>
+                      <span class="views">Consultée {{fiche.views}} fois.</span>
+                    </a>
                   </li>
                 {% endif %}
               {% endfor %}

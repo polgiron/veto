@@ -1,7 +1,7 @@
 var keystone = require('keystone');
 var async = require('async');
 
-exports = module.exports = function(req, res) {
+exports = module.exports = function (req, res) {
   var view = new keystone.View(req, res);
   var FicheCategory = keystone.list('FicheCategory');
   var Fiche = keystone.list('Fiche');
@@ -11,12 +11,12 @@ exports = module.exports = function(req, res) {
 
   var Page = keystone.list('Page');
 
-  view.on('init', function(next) {
+  view.on('init', function (next) {
     var q = Page.model.findOne({
-      type: 'home'
+      type: 'home',
     });
 
-    q.exec(function(err, results) {
+    q.exec(function (err, results) {
       if (results) {
         locals.phone = results.phone;
         locals.email = results.email;
@@ -27,12 +27,12 @@ exports = module.exports = function(req, res) {
 
   // Page intro
 
-  view.on('init', function(next) {
+  view.on('init', function (next) {
     var q = Page.model.findOne({
-      type: 'fiche'
+      type: 'fiche',
     });
 
-    q.exec(function(err, results) {
+    q.exec(function (err, results) {
       if (results) {
         locals.data = results;
       }
@@ -42,10 +42,10 @@ exports = module.exports = function(req, res) {
 
   // Fiches for the menu
 
-  view.on('init', function(next) {
+  view.on('init', function (next) {
     var q = FicheCategory.model.find().sort('sortOrder');
 
-    q.exec(function(err, results) {
+    q.exec(function (err, results) {
       if (err || !results.length) {
         return next(err);
       }
@@ -56,12 +56,12 @@ exports = module.exports = function(req, res) {
     });
   });
 
-  view.on('init', function(next) {
+  view.on('init', function (next) {
     var q = Fiche.model.find({
-      state: 'published'
+      state: 'published',
     }).populate('category').sort('sortOrder');
 
-    q.exec(function(err, fiches) {
+    q.exec(function (err, fiches) {
       if (fiches) {
         locals.data.fiches = fiches;
       }
@@ -83,12 +83,16 @@ exports = module.exports = function(req, res) {
   if (req.params.fiche) {
     view.on('init', function(next) {
       var q = Fiche.model.findOne({
-        slug: req.params.fiche
+        slug: req.params.fiche,
       }).populate('category');
 
       q.exec(function(err, fiche) {
         if (fiche) {
           locals.fiche = fiche;
+          var q = Fiche.model.update({ _id: fiche._id }, { $inc: { views: 1 } });
+          q.exec(function (err, result) {
+            if (err) throw err;
+          });
         } else {
           req.flash('error', 'Cette fiche n\'existe pas.');
           return res.redirect('/fiches');
