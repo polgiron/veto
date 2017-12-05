@@ -9,6 +9,7 @@ App.Accordion = function() {
 
   $('.accordion').accordion({
     active: activeTab,
-    heightStyle: 'content'
+    heightStyle: 'content',
+    collapsible: true
   });
 };
