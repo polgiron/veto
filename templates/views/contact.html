@@ -37,8 +37,7 @@
             <label>Numéro de téléphone</label>
             <input type="text" name="phone" value="{{ formData.phone }}" placeholder="(facultatif)" class="form-control">
           </div>
-          {% set class = ( "input-invalid" if validationErrors.enquiryType else "" ) %}
-          <div class="input-single {{ class }}">
+          <!--div class="input-single {{ class }}">
             <label>Est ce une urgence?</label>
             <select name="enquiryType" class="form-control">
               {% for type in enquiryTypes %}
@@ -46,7 +45,7 @@
                 <option value="{{type.value}}" {{ selected }}>{{ type.label }}</option>
               {% endfor %}
             </select>
-          </div>
+          </div-->
           {% set class = ( "input-invalid" if validationErrors.message else "" ) %}
           <div class="input-single {{ class }}">
             <label>Message</label>
