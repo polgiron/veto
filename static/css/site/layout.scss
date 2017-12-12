@@ -441,7 +441,6 @@ body.menu-open {
     border-radius: 50%;
     overflow: hidden;
     background: $color-main;
-    border: 3px solid $color-main;
     height: 120px;
     width: 120px;
     position: relative;
@@ -463,11 +462,11 @@ body.menu-open {
 
     img {
       position: relative;
-      z-index: 2;
       object-fit: cover;
       height: 100%;
       width: 100%;
       border-radius: 50%;
+      border: 2px solid $color-main;
     }
   }
 
