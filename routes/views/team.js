@@ -15,6 +15,7 @@ exports = module.exports = function (req, res) {
     q.exec(function(err, results) {
       if (results) {
         locals.members = results;
+        console.log(results);
       }
       next(err);
     });

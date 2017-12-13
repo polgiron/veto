@@ -14,7 +14,11 @@
     </div>
     <ul class="section__list">
       {% for member in members %}
-        {{ Member.member(member.name, member._.image, member.title) }}
+        {% if member.image.public_id %}
+          {{ Member.member(member.name, member._.image, member.title) }}
+        {% else %}
+          {{ Member.member(member.name, false, member.title) }}
+        {% endif %}
       {% endfor %}
     </ul>
   </div>

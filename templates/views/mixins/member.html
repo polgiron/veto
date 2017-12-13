@@ -1,8 +1,11 @@
 {% macro member(name, image, title) %}
   <li class="member animate-element">
     <div class="portrait">
-      {% include "svg/icon-portrait.svg" %}
-      <img src="{{image.fit(250, 250)}}">
+      {% if image != false %}
+        <img src="{{image.fit(250, 250)}}">
+      {% else %}
+        {% include "svg/icon-portrait.svg" %}
+      {% endif %}
     </div>
     <h3 class="heading-3">{{name}}</h3>
     <p class="title">{{title}}</p>
