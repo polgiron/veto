@@ -14,6 +14,13 @@ var routes = {
 // Setup Route Bindings
 exports = module.exports = function (app) {
   // Views
+	app.get('*', function (req, res, next) {
+		if (req.headers['x-forwarded-proto'] !== 'https') {
+			res.redirect('https://www.urgences-et-consultants-veterinaires.com' + req.url);
+		} else {
+			next();
+		}
+	});
 	app.get('/veterinaires-paris', function (req, res) {
 		res.redirect('/');
 	});
