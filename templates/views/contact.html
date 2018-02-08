@@ -26,7 +26,7 @@
           {% set class = ( "input-invalid" if validationErrors.name else "" ) %}
           <div class="input-single {{ class }}">
             <label>Nom complet</label>
-            <input type="text" name="name.full" value="{{ formData["name.full"] }}" class="form-control">
+            <input type="text" name="name" value="{{ formData.name }}" class="form-control">
           </div>
           {% set class = ( "input-invalid" if validationErrors.email else "" ) %}
           <div class="input-single {{ class }}">

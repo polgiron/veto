@@ -14,13 +14,13 @@ var routes = {
 // Setup Route Bindings
 exports = module.exports = function (app) {
   // Views
-	app.get('*', function (req, res, next) {
+	/*app.get('*', function (req, res, next) {
 		if (req.headers['x-forwarded-proto'] !== 'https') {
 			res.redirect('https://www.urgences-et-consultants-veterinaires.com' + req.url);
 		} else {
 			next();
 		}
-	});
+	});*/
 	app.get('/veterinaires-paris', function (req, res) {
 		res.redirect('/');
 	});
@@ -32,6 +32,11 @@ exports = module.exports = function (app) {
 	app.get('/service', routes.views.service);
 	app.all('/contact', routes.views.contact);
 	app.get('/david.znaty', routes.views.perso);
+
+	app.post(
+    '/contact',
+    routes.views.contact
+  );
 
   // app.get('/admin', routes.views.index);
 };
